@@ -1,11 +1,12 @@
 from flask import Flask
 
+# Créer une application Flask
 def create_app():
     app = Flask(__name__)
     
-    # Import des routes ou blueprints
-    from .routes.dependencies import dependencies
 
-    app.register_blueprint(dependencies)
+    from .routes.dependencies import dependencies    # Import le blueprint "dependencies"
 
-    return app
+    app.register_blueprint(dependencies)    # Enregistrer le blueprint "dependencies" dans l'application
+
+    return app 
