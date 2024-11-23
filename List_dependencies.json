@@ -1,0 +1,760 @@
+{
+    "1.0.8": {
+        "FUZo6yCk": {
+            "name": "1.21-1.6",
+            "version_id": "FUZo6yCk",
+            "version_number": "1.21-1.6",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "CvQ5xrW8": {
+            "name": "enchant icons 1.20.3\u20131.20.4 v1.3",
+            "version_id": "CvQ5xrW8",
+            "version_number": "v1.3",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        "fpDBBXvT": {
+            "name": "1.6.1+1.21",
+            "version_id": "fpDBBXvT",
+            "version_number": "1.6.1+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "lclhI6NO": {
+            "name": "[Fabric] Sodium Extra 0.6.0-beta.1 for Minecraft 1.21.1",
+            "version_id": "lclhI6NO",
+            "version_number": "mc1.21.1-0.6.0-beta.1+fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "oGwyXeEI": {
+            "name": "[1.21] Fabric API 0.102.0+1.21",
+            "version_id": "oGwyXeEI",
+            "version_number": "0.102.0+1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "4CjXUG8M": {
+            "name": "PresenceFootsteps-1.10.0+1.21",
+            "version_id": "4CjXUG8M",
+            "version_number": "1.10.0+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "VQc9njMw": {
+            "name": "[Fabric 1.21] 15.1.5",
+            "version_id": "VQc9njMw",
+            "version_number": "15.1.5+fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "rVchC4HC": {
+            "name": "Durability Tooltip 1.1.5",
+            "version_id": "rVchC4HC",
+            "version_number": "1.1.5-fabric-mc1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "yhQrKNAJ": {
+            "name": "FabricSkyBoxes 0.7.4 for Minecraft 1.21",
+            "version_id": "yhQrKNAJ",
+            "version_number": "mc1.21-0.7.4",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "minihud-fabric-1.21-0.31.999-sakura.16": {
+            "name": "minihud-fabric-1.21-0.31.999-sakura.16",
+            "version_id": "minihud-fabric-1.21-0.31.999-sakura.16",
+            "version_number": "none",
+            "loaders": "none"
+        },
+        "OLAFIByz": {
+            "name": "TimeChanger 1.3.2 - 1.21",
+            "version_id": "OLAFIByz",
+            "version_number": "1.3.2",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "lghOtM1x": {
+            "name": "IPN 2.0.4 for fabric 1.21",
+            "version_id": "lghOtM1x",
+            "version_number": "fabric-1.21-2.0.4",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "f2mvlGrg": {
+            "name": "Carpet 1.4.147 for Minecraft 1.21 and 1.21.1",
+            "version_id": "f2mvlGrg",
+            "version_number": "1.4.147",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "kPbJu8eF": {
+            "name": "1.7.0-1.21(.1) - Fabric",
+            "version_id": "kPbJu8eF",
+            "version_number": "1.7.0",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "SkWcZo5g": {
+            "name": "4.17",
+            "version_id": "SkWcZo5g",
+            "version_number": "4.17",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        "dPuD2Nuk": {
+            "name": "OptiGUI 2.3.0-beta.2+1.21",
+            "version_id": "dPuD2Nuk",
+            "version_number": "2.3.0-beta.2+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "2NuH7W1K": {
+            "name": "1.3.0+1.21",
+            "version_id": "2NuH7W1K",
+            "version_number": "1.3.0+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "3ib3Uvvv": {
+            "name": "v11.0.2 for 1.21",
+            "version_id": "3ib3Uvvv",
+            "version_number": "11.0.2",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "VNbys2OF": {
+            "name": "MoreCulling - v0.27.1 for 1.21",
+            "version_id": "VNbys2OF",
+            "version_number": "0.27.1",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "wmIZ4wP4": {
+            "name": "7.0.0 (Fabric)",
+            "version_id": "wmIZ4wP4",
+            "version_number": "7.0.0-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "2pBwdDy2": {
+            "name": "Puzzle 1.6.3 - 1.21",
+            "version_id": "2pBwdDy2",
+            "version_number": "1.6.3+1.21-Puzzle",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "Gw5ZLCvi": {
+            "name": "libIPN 6.0.2 for fabric 1.21",
+            "version_id": "Gw5ZLCvi",
+            "version_number": "fabric-1.21-rc1-6.0.2",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "13do3Fe4": {
+            "name": "[Fabric/Forge/Neo] 1.21.1-7.84",
+            "version_id": "13do3Fe4",
+            "version_number": "1.21.1-7.84-fabric+forge+neo",
+            "loaders": [
+                "fabric",
+                "forge",
+                "neoforge",
+                "quilt"
+            ]
+        },
+        "xCclI9ED": {
+            "name": "1.4.9-1.21(.1) - Fabric",
+            "version_id": "xCclI9ED",
+            "version_number": "1.4.9",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "Q3Z6GESL": {
+            "name": "Boat Item View Fabric 1.20.x 0.0.5",
+            "version_id": "Q3Z6GESL",
+            "version_number": "1.20.x-0.0.5-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "Y8Wa10Re": {
+            "name": "YetAnotherConfigLib 3.5.0 for MC 1.21",
+            "version_id": "Y8Wa10Re",
+            "version_number": "3.5.0+1.21-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "3siYJiWG": {
+            "name": "More Chat History 1.3.1 [MC 1.20.5+]",
+            "version_id": "3siYJiWG",
+            "version_number": "1.3.1",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "Z8VpxxGh": {
+            "name": "Indium 1.0.35 for Minecraft 1.21.x/Sodium 0.5.11",
+            "version_id": "Z8VpxxGh",
+            "version_number": "1.0.35+mc1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "ahszC7KU": {
+            "name": "ImmediatelyFast 1.2.21",
+            "version_id": "ahszC7KU",
+            "version_number": "1.2.21+1.21.1-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "d0SjJDnR": {
+            "name": "[Fabric 1.21] v5.0.4+1.21",
+            "version_id": "d0SjJDnR",
+            "version_number": "5.0.4+1.21-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "Kdz76qQt": {
+            "name": "Iris 1.8 Beta 3 for Fabric",
+            "version_id": "Kdz76qQt",
+            "version_number": "1.8.0-beta.3+1.21-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "EvcC3qTM": {
+            "name": "v1.7.0",
+            "version_id": "EvcC3qTM",
+            "version_number": "1.7.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "qwnXQQ0I": {
+            "name": "1.21-2.4.12",
+            "version_id": "qwnXQQ0I",
+            "version_number": "1.21-2.4.12",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "FayzGq0c": {
+            "name": "Fabric Language Kotlin 1.12.1+kotlin.2.0.20",
+            "version_id": "FayzGq0c",
+            "version_number": "1.12.1+kotlin.2.0.20",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "CQI1MTlR": {
+            "name": "MaLiLib-1.21.1-0.21.0",
+            "version_id": "CQI1MTlR",
+            "version_number": "0.21.0",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "WWGMr6pO": {
+            "name": "justenoughbreeding-fabric-1.21.x-1.4.0",
+            "version_id": "WWGMr6pO",
+            "version_number": "1.4.0",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "6LaqncTu": {
+            "name": "Blue Netherite[1.1.2] for 1.20.1 - 1.21",
+            "version_id": "6LaqncTu",
+            "version_number": "1.1.2",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        "8rHtWk5F": {
+            "name": "No darkness effect 0.0.2-1.20.5-1.21.x",
+            "version_id": "8rHtWk5F",
+            "version_number": "0.0.2-1.20.5-1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "eU6PA0pr": {
+            "name": "[Mod] Release v1.8.3",
+            "version_id": "eU6PA0pr",
+            "version_number": "1.8.3+mod",
+            "loaders": [
+                "fabric",
+                "forge",
+                "quilt"
+            ]
+        },
+        "sXO3idkS": {
+            "name": "BetterF3 Fabric v11.0.1 (1.21)",
+            "version_id": "sXO3idkS",
+            "version_number": "11.0.1",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "7jtvrmVP": {
+            "name": "[Fabric 1.21(.1)] v15.0.130",
+            "version_id": "7jtvrmVP",
+            "version_number": "15.0.130+fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "5xvCCRjJ": {
+            "name": "MemoryLeakFix 1.1.5 [fabric,1.17+]",
+            "version_id": "5xvCCRjJ",
+            "version_number": "v1.1.5",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "373K4YJh": {
+            "name": "1.39.0",
+            "version_id": "373K4YJh",
+            "version_number": "1.39.0_Fabric_1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "KMOzdYko": {
+            "name": "[Fabric 1.14 - 1.21.3] v0.1.2",
+            "version_id": "KMOzdYko",
+            "version_number": "0.1.2",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "RZDYy0mt": {
+            "name": "v3.6.3",
+            "version_id": "RZDYy0mt",
+            "version_number": "3.6.3",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "nWbgJNPj": {
+            "name": "v4.2.1 (1.21.1)",
+            "version_id": "nWbgJNPj",
+            "version_number": "4.2.1+1.21.1",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "7SQiYQty": {
+            "name": "Fabric - 1.21",
+            "version_id": "7SQiYQty",
+            "version_number": "6.2.2",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "8QSY2PFn": {
+            "name": "Hold That Chunk 2.1.0",
+            "version_id": "8QSY2PFn",
+            "version_number": "2.1.0",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "A3n8pliV": {
+            "name": "FabricSkyBoxes Interop 1.4.0 for Minecraft 1.21",
+            "version_id": "A3n8pliV",
+            "version_number": "mc1.21-1.4.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "vBzkrSYP": {
+            "name": "WorldEdit 7.3.6 (NeoForge/Fabric for MC 1.21-1.21.1)",
+            "version_id": "vBzkrSYP",
+            "version_number": "7.3.6",
+            "loaders": [
+                "fabric",
+                "neoforge"
+            ]
+        },
+        "HfdXLVRy": {
+            "name": "1.14.1",
+            "version_id": "HfdXLVRy",
+            "version_number": "1.14.1",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "JmxJ7PRU": {
+            "name": "Fabric - 1.21",
+            "version_id": "JmxJ7PRU",
+            "version_number": "2.2.3",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "rr7vSO7n": {
+            "name": "Sodium Translations v3.17.0",
+            "version_id": "rr7vSO7n",
+            "version_number": "v3.17.0",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        "litematica-fabric-1.21-0.19.0": {
+            "name": "litematica-fabric-1.21-0.19.0",
+            "version_id": "litematica-fabric-1.21-0.19.0",
+            "version_number": "none",
+            "loaders": "none"
+        },
+        "3xDRgbYA": {
+            "name": "0.12.13",
+            "version_id": "3xDRgbYA",
+            "version_number": "0.12.13",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "Hk6zJ311": {
+            "name": "EBE 1.20.x",
+            "version_id": "Hk6zJ311",
+            "version_number": "1-1.20",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        "afBcyXjI": {
+            "name": "[Fabric 1.21(.1)] v13.0.6",
+            "version_id": "afBcyXjI",
+            "version_number": "13.0.6+fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "YFHMOEkE": {
+            "name": "[Fabric] Reese's Sodium Options 1.8.0-beta.2",
+            "version_id": "YFHMOEkE",
+            "version_number": "mc1.21.1-1.8.0-beta.2+fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "FL8dt9f8": {
+            "name": "[Fabric/Forge/Neo] 1.21.1-4.2",
+            "version_id": "FL8dt9f8",
+            "version_number": "1.21.1-4.2-fabric+forge+neo",
+            "loaders": [
+                "fabric",
+                "forge",
+                "neoforge",
+                "quilt"
+            ]
+        },
+        "fMSJMzU1": {
+            "name": "Auto Clicker Fabric 21.0.3",
+            "version_id": "fMSJMzU1",
+            "version_number": "21.0.3",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "oZOSEhyy": {
+            "name": "0.6.0 (Beta 1) for Fabric",
+            "version_id": "oZOSEhyy",
+            "version_number": "mc1.21-0.6.0-beta.1-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "LHBm6fEV": {
+            "name": "Animatica v0.6.1 for 1.21",
+            "version_id": "LHBm6fEV",
+            "version_number": "0.6.1+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "vg7GaKbh": {
+            "name": "Zoomify 2.14.0 for MC 1.21",
+            "version_id": "vg7GaKbh",
+            "version_number": "2.14.0+1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "3rShEpTe": {
+            "name": "24.4.0",
+            "version_id": "3rShEpTe",
+            "version_number": "24.4.0_Fabric_1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "XJ7ktk4d": {
+            "name": "v15+ (1.20+)",
+            "version_id": "XJ7ktk4d",
+            "version_number": "v15",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        "gq5isc7f": {
+            "name": "advancementinfo",
+            "version_id": "gq5isc7f",
+            "version_number": "1.20.4-fabric0.91.2-1.4",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "mOk69fib": {
+            "name": "Debugify 1.21+1.0",
+            "version_id": "mOk69fib",
+            "version_number": "1.21+1.0",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "NrEJbYuZ": {
+            "name": "NoFog 1.3.6",
+            "version_id": "NrEJbYuZ",
+            "version_number": "1.3.6+1.16.5-1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "ieyC6IPw": {
+            "name": "RoughlyEnoughProfessions 1.21",
+            "version_id": "ieyC6IPw",
+            "version_number": "4.0.1",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "LGYOH4RN": {
+            "name": "1.1.1 (Fabric/Quilt 1.17+)",
+            "version_id": "LGYOH4RN",
+            "version_number": "1.1.1+1.17",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "CtLJXKCX": {
+            "name": "MidnightLib 1.6.2 - Fabric 1.21",
+            "version_id": "CtLJXKCX",
+            "version_number": "1.6.2-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "oAPMPBER": {
+            "name": "[Fabric 1.21] v16.0.762",
+            "version_id": "oAPMPBER",
+            "version_number": "16.0.762+fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "4stUfJpY": {
+            "name": "Blur+ 4.1.0 - Fabric 1.21",
+            "version_id": "4stUfJpY",
+            "version_number": "4.1.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "BQ8qstAV": {
+            "name": "1.7.5-1.21(.1) - Fabric",
+            "version_id": "BQ8qstAV",
+            "version_number": "1.7.5",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "wP25tEBe": {
+            "name": "[FABRIC][1.21.1] Sound Physics Remastered 1.21.1-1.4.6",
+            "version_id": "wP25tEBe",
+            "version_number": "fabric-1.21.1-1.4.6",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "euSlaAtA": {
+            "name": "SuperMartijn642's Config Lib 1.1.8",
+            "version_id": "euSlaAtA",
+            "version_number": "1.1.8-fabric-mc1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "fk7e7Iej": {
+            "name": "v3.0.0-beta.4 1.21.0/1",
+            "version_id": "fk7e7Iej",
+            "version_number": "3.0.0-beta.4+1.21.0+1.21.1",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "6SzVPVR4": {
+            "name": "[Fabric 1.21] Capes 1.5.4",
+            "version_id": "6SzVPVR4",
+            "version_number": "1.5.4+1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "vomskVK3": {
+            "name": "1.3.0 for MC 1.21 (fabric)",
+            "version_id": "vomskVK3",
+            "version_number": "1.3.0+mc1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "fG1xJao0": {
+            "name": "appleskin-fabric-mc1.21-3.0.5",
+            "version_id": "fG1xJao0",
+            "version_number": "3.0.5+mc1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "yyJushgo": {
+            "name": "1.2.4",
+            "version_id": "yyJushgo",
+            "version_number": "1.2.4",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "KWZCioh0": {
+            "name": "Eating Animation",
+            "version_id": "KWZCioh0",
+            "version_number": "1.9.72",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "4cZkq7uT": {
+            "name": "0.3.7 - Support for Minecraft 1.21!",
+            "version_id": "4cZkq7uT",
+            "version_number": "0.3.7",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "riMhCAII": {
+            "name": "No Chat Reports Fabric-1.21-v2.8.0",
+            "version_id": "riMhCAII",
+            "version_number": "Fabric-1.21-v2.8.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "yn3njhcI": {
+            "name": "1.21-2.6.17",
+            "version_id": "yn3njhcI",
+            "version_number": "1.21-2.6.17",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        "NksUpFjf": {
+            "name": "3.0.0-beta.5+1.21",
+            "version_id": "NksUpFjf",
+            "version_number": "3.0.0-beta.5+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "dIGKewCo": {
+            "name": "3.0.0 - 1.20.5-1.21.1",
+            "version_id": "dIGKewCo",
+            "version_number": "3.0.0+1.20.6",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "1b06wT0J": {
+            "name": "Fadeless 1.1.0 - Fabric/Quilt",
+            "version_id": "1b06wT0J",
+            "version_number": "1.1.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        "dhKbgdIb": {
+            "name": "[1.21] Visuality 0.7.7",
+            "version_id": "dhKbgdIb",
+            "version_number": "0.7.7+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        }
+    }
+}
