@@ -1,9 +1,6 @@
 import requests
 import json
 
-# URL de l'API Modrinth pour la listes des versions
-id = "YcOwVsza"
-version_url = f"https://api.modrinth.com/v2/project/{id}/version"
 
 # token d'authentification
 acces_token = "mrp_fOcLmXf0VpeXx6If4AcygZ8Jj4tRYMYrXI6wuKOJSNGmlqn01wYRAF6LfTuL"
@@ -107,8 +104,6 @@ def get_name_and_version(version_id, modpack_version, dependency):
 
 
 
-
-
 # Extraire les dependances avec entry
 def get_dependencies(dependencies, modpack_version):
     for dependency in dependencies:
@@ -122,8 +117,7 @@ def get_dependencies(dependencies, modpack_version):
 
 
 
-counter = 0
-
+def find_dependencies(data, headers):
 #Extraire les noms et versions des dependances
 for entry in data:
 
@@ -146,4 +140,6 @@ print("Done")
 
 
 
+if __name__ == "__main__":
+    app.run(debug=True)
 
