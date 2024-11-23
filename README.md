@@ -1,2 +1,12 @@
-# changelog_generator
-Here’s a shorter version of the description:  Changelog Generator is a Python tool that uses the Modrinth API to generate changelogs. It identifies and lists changes between two versions, providing a clear overview of updates. This project aims to simplify changelog creation and serves as a learning opportunity for its developer.
+# Changelog Generator
+## Description:
+Changelog Generator is a Python tool designed to automatically generate changelogs using data from Modrinth. It identifies and compiles the changes made between two specific versions of a project.
+
+Features:
+
+Data Source: Integration with the Modrinth API.
+Output: A clear and detailed changelog in English.
+Main Purpose: To simplify version documentation for developers and users alike.
+Why this project?
+Built as a learning opportunity and to streamline changelog creation for both personal and professional use.
+
