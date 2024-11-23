@@ -7,15 +7,18 @@
     </head>
     <body>
         <h1>Changelog Generator</h1>
+
         <form action="/submit" method="post">
-            <label for="version1">Version 1:</label>
-            <input type="text" id="version1" name="version1"><br>
-            <label for="version2">Version 2:</label>
-            <input type="text" id="version2" name="version2"><br>
+            <label for="last_version">Last Version:</label>
+            <input type="text" id="last_version" name="last_version"><br>
+
+            <label for="new_version">New Version:</label>
+            <input type="text" id="new_version" name="new_version"><br>
+
             <label for="id">Version ID:</label>
             <input type="text" id="id" name="id"><br>
+
             <button>Generate Changelog</button>
         </form>
-
     </body>
 </html>
