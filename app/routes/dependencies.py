@@ -96,28 +96,32 @@ def get_dependencies(dependencies, modpack_version, headers):
 
 
 
-def find_dependencies(data, headers, counter):
+def find_dependencies(data, headers, modpack_versions, counter = 0):
     #Extraire les noms et versions des dependances
     for entry in data:
-
-        #Limite des 2 dernières versions
-        if counter == 2:
-            break 
-        
-        #Extraire la version du Modpack
+            
         modpack_version = entry.get("version_number", [])
 
-        #Extraire les dependances
-        dependencies  =  entry.get("dependencies", [])
+        #Vérifier si la version du modpack est dans la liste
+        if modpack_version in modpack_versions:
 
-        get_dependencies(dependencies, modpack_version, headers)
+            #Extraire les dependances
+            dependencies  =  entry.get("dependencies", [])
+
+            get_dependencies(dependencies, modpack_version, headers)
+        else:
+            print(f"Error: {modpack_version} not in {modpack_versions}")
+        
 
         counter += 1
+
+        if counter >= 2:
+            break
     print("Done")
 
 
 
-def initialize_id(id):
+def initialize_id(id, version1, version2):
     # URL de l'API Modrinth pour la listes des versions
     version_url = f"https://api.modrinth.com/v2/project/{id}/version"
 
@@ -133,22 +137,17 @@ def initialize_id(id):
     # Vérifier si la requête a réussi
     if reponse.status_code == 200: 
         data = reponse.json()
+        print("Obtention des données de l'API Modrinth réussie !")
     else:
         print(f"Error: {reponse.status_code}") 
 
-    # Enregistrer les dependances dans le fichier dependencies.json
-    with open("app/data/dependencies.json", "w") as json_file: 
-        json.dump(data, json_file, indent=4)
-
-        print("Dependencies data saved to 'dependencies.json'")
+    modpack_versions = [version1, version2]
 
     # Nettoyer le fichier List_dependencies.json
     with open("app/data/list_dependencies.json", "w") as file:
         file.write("{}")
-    
-    counter = 0
 
-    find_dependencies(data, headers, counter)
+    find_dependencies(data, headers, modpack_versions)
 
 
 
@@ -157,5 +156,5 @@ def submit():
     version1 = request.form.get("version1")
     version2 = request.form.get("version2")
     id = request.form.get("id")
-    initialize_id(id)
+    initialize_id(id, version1, version2)
     return f"Vous avez entré : {version1} et {version2} et {id}"
