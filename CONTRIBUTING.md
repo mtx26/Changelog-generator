@@ -16,7 +16,7 @@ Thank you for considering contributing to Changelog-generator! We welcome contri
 3. **Create a Branch**  
    Create a new branch for your feature or fix:
    ```bash
-   git checkout -b feature-branch-name
+   git checkout -b "feature-branch-name"
    ```
 
 4. **Make Changes**  
@@ -31,7 +31,7 @@ Thank you for considering contributing to Changelog-generator! We welcome contri
 6. **Push Changes**  
    Push your changes to your forked repository:
    ```bash
-   git push origin feature-branch-name
+   git push origin "feature-branch-name"
    ```
 
 7. **Create a Pull Request**  
