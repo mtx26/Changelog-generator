@@ -22,8 +22,8 @@
         "files": [
             {
                 "hashes": {
-                    "sha512": "f17d3a83915c2adcd44cc89228a092059e86c94ef7c288a90a4c6a6b8deb9836b2fc5b60ca1ad78cda3fc10db4741f9d1f75ba85c5602344822d9c5516059558",
-                    "sha1": "98f2d0a36658c2b6fe541d19ab5f185f5b3cae38"
+                    "sha1": "98f2d0a36658c2b6fe541d19ab5f185f5b3cae38",
+                    "sha512": "f17d3a83915c2adcd44cc89228a092059e86c94ef7c288a90a4c6a6b8deb9836b2fc5b60ca1ad78cda3fc10db4741f9d1f75ba85c5602344822d9c5516059558"
                 },
                 "url": "https://cdn.modrinth.com/data/YcOwVsza/versions/e6DdvJBP/Fastpack%201.0.8.mrpack",
                 "filename": "Fastpack 1.0.8.mrpack",
@@ -1138,8 +1138,8 @@
         "files": [
             {
                 "hashes": {
-                    "sha512": "867308e6710b5d5c82c60dbb3e62bfc9ecae9037cd827c1310669d3e1f41713e28a51a3d3faa50ebc890279f751f6b1087e3aea26dae1ad0b72d53953d98cf00",
-                    "sha1": "191f656d62c39942725aa589196cefe83155096f"
+                    "sha1": "191f656d62c39942725aa589196cefe83155096f",
+                    "sha512": "867308e6710b5d5c82c60dbb3e62bfc9ecae9037cd827c1310669d3e1f41713e28a51a3d3faa50ebc890279f751f6b1087e3aea26dae1ad0b72d53953d98cf00"
                 },
                 "url": "https://cdn.modrinth.com/data/YcOwVsza/versions/fYaWht0y/Fastpack%201.0.6.mrpack",
                 "filename": "Fastpack 1.0.6.mrpack",
@@ -1606,8 +1606,8 @@
         "files": [
             {
                 "hashes": {
-                    "sha512": "728056a0446ec1273559d9560d8e7f6b446099d64d014818bff3c4c8116302ebd3fa33ec1afdcef7dce48b039c977ee7eaf60e345ff6e3f852bdce45f5d964df",
-                    "sha1": "4716e5dee1a48ba89eb4a68130af28493db957e3"
+                    "sha1": "4716e5dee1a48ba89eb4a68130af28493db957e3",
+                    "sha512": "728056a0446ec1273559d9560d8e7f6b446099d64d014818bff3c4c8116302ebd3fa33ec1afdcef7dce48b039c977ee7eaf60e345ff6e3f852bdce45f5d964df"
                 },
                 "url": "https://cdn.modrinth.com/data/YcOwVsza/versions/y5dv2peR/Fastpack%201.0.5.mrpack",
                 "filename": "Fastpack 1.0.5.mrpack",
@@ -2674,8 +2674,8 @@
         "files": [
             {
                 "hashes": {
-                    "sha1": "d581a64a4ce0c0859bea334436911dfa81da98ff",
-                    "sha512": "5c30ffdb665e5369bd2c165680cdd5214bed7a8a9577ac38c74a160444c662bf2c39a815cb76499c8dbbfaecc57dbf2293f57e9d88f63b966edd897dc2975d5e"
+                    "sha512": "5c30ffdb665e5369bd2c165680cdd5214bed7a8a9577ac38c74a160444c662bf2c39a815cb76499c8dbbfaecc57dbf2293f57e9d88f63b966edd897dc2975d5e",
+                    "sha1": "d581a64a4ce0c0859bea334436911dfa81da98ff"
                 },
                 "url": "https://cdn.modrinth.com/data/YcOwVsza/versions/dzjCDYkA/Fastpack%201.0.2.mrpack",
                 "filename": "Fastpack 1.0.2.mrpack",
@@ -3226,8 +3226,8 @@
         "files": [
             {
                 "hashes": {
-                    "sha512": "9a3cfd4d720888f61693b73872b24cd6897dbcfeebf327f1c192185fd0108a49c4a5d3b5db5f9bec40007f3abb086f3b2bcbb53ad62bd3af16ade59eb219122c",
-                    "sha1": "82a5f5719db482808a012a9fe062e88a1cc4c93a"
+                    "sha1": "82a5f5719db482808a012a9fe062e88a1cc4c93a",
+                    "sha512": "9a3cfd4d720888f61693b73872b24cd6897dbcfeebf327f1c192185fd0108a49c4a5d3b5db5f9bec40007f3abb086f3b2bcbb53ad62bd3af16ade59eb219122c"
                 },
                 "url": "https://cdn.modrinth.com/data/YcOwVsza/versions/c2Qo8zq9/Fastpack%201.0.1.mrpack",
                 "filename": "Fastpack 1.0.1.mrpack",
@@ -3790,506 +3790,14 @@
         ],
         "dependencies": [
             {
-                "version_id": "Ox1racg8",
-                "project_id": "1IjD5062",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "ebLQ6HBv",
-                "project_id": "1bokaNcj",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "G2PcCpZl",
-                "project_id": "1eAoo2KR",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "ZOhVauWn",
-                "project_id": "1u6JkXh5",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "r6EhfuUa",
-                "project_id": "2M01OLQq",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "1srBlHhv",
-                "project_id": "3IuO68q1",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "crC7YOpw",
-                "project_id": "3qsfQtE9",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
                 "version_id": "FTmtYNdf",
                 "project_id": "4I1XuqiY",
                 "file_name": null,
                 "dependency_type": "embedded"
             },
             {
-                "version_id": "3m5znPWm",
-                "project_id": "51shyZVL",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "115Ubn3O",
-                "project_id": "5ZwdcRci",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "Hk6zJ311",
-                "project_id": "6udpuGCH",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "CvQ5xrW8",
-                "project_id": "6vhHOIKw",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "dEq1ncBU",
-                "project_id": "89Wsn8GD",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "PLfxrDkh",
-                "project_id": "8qkXwOnk",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "AkivIlyi",
-                "project_id": "8shC1gFX",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "eBZiZ9NS",
-                "project_id": "9s6osm5g",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "4GyXKCLd",
-                "project_id": "AANobbMI",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "5a6694zO",
-                "project_id": "BVzZfTc1",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "Q3Z6GESL",
-                "project_id": "BdKIyOLe",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "fkLiGoHs",
-                "project_id": "Bh37bMuy",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "6lwzxSI3",
-                "project_id": "DIlqwRFH",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "pmFyu3Sz",
-                "project_id": "EsAfCjCV",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "gq5isc7f",
-                "project_id": "G1epq3jN",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "YYfmFXPZ",
-                "project_id": "GcWjdA9I",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "HZYU0kdg",
-                "project_id": "H8CaAYZC",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "afsFajDC",
-                "project_id": "Ha28R6CL",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "Y9X3wWP7",
-                "project_id": "HpdHOPOp",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "pUVuXS69",
-                "project_id": "JuksLGBQ",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "UldUTomA",
-                "project_id": "K8iUn9o9",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "XJ7ktk4d",
-                "project_id": "Kn6gOLwE",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "cp6X3Hrn",
-                "project_id": "LN9BxssP",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "48hFxWw7",
-                "project_id": "LQ3K71Q1",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "8QSY2PFn",
-                "project_id": "LXJlc5WJ",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "OwhUSOUM",
-                "project_id": "MPCX6s5C",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "zzelzVhK",
-                "project_id": "NK39zBp2",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "hyejM5za",
-                "project_id": "NNAgCjsB",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "5xvCCRjJ",
-                "project_id": "NRjRiSSD",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "jEhoJmNF",
-                "project_id": "NcUtCpym",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "TGJXKoTQ",
-                "project_id": "Nv2fQJo5",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "MPv4hk2Z",
-                "project_id": "Nz0RSWrF",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "GR7zopVV",
-                "project_id": "O7RBXm3n",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "oOXA8xCw",
-                "project_id": "OL1EGja1",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "VlLxDisa",
-                "project_id": "Orvt0mRa",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "tAwdMmKY",
-                "project_id": "P7dR8mSH",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "M0ndiav7",
-                "project_id": "PtjYWJkn",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "r6uVoUxU",
-                "project_id": "QdG47OkI",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "aQYNRsGo",
-                "project_id": "QwxR6Gcd",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "7GB1hLrr",
-                "project_id": "T8MMXTpr",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "yYzR60Xd",
-                "project_id": "TQTTVgYE",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "4KgMjBc7",
-                "project_id": "Wb5oqrBJ",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "KMOzdYko",
-                "project_id": "WwbubTsV",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "MrgEk6HV",
-                "project_id": "XeEZ3fK2",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "XGzaAlX8",
-                "project_id": "YBz7DOs8",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "OdWrtk1W",
-                "project_id": "YC6MzoCi",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "45ETshvT",
-                "project_id": "YL57xq9U",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "eoCzDGY0",
-                "project_id": "aEK1KhsC",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "EQNuBJf5",
-                "project_id": "codAaoxh",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "jVuY2dwJ",
-                "project_id": "e0M1UDsY",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "gLlBbHbZ",
-                "project_id": "ihnBJ6on",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "xmDYAuBB",
-                "project_id": "kYuIpRLv",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "h1QpxElt",
-                "project_id": "kqJFAPU9",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "kVjQWX0l",
-                "project_id": "lhGA9TYQ",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "ybV7vGT5",
-                "project_id": "mOgUt4GM",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "j53ChsnW",
-                "project_id": "ncKjyGm3",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "zoca1OgH",
-                "project_id": "nfn13YXA",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "fNHCa6bl",
-                "project_id": "nvQzSEkH",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "OYEDRRp8",
-                "project_id": "onSQdWhM",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "MU5nRGAS",
-                "project_id": "otVJckYQ",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "Pjto4zdj",
-                "project_id": "qQyHxfxd",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "v82u5BX1",
-                "project_id": "qyVF9oeo",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "54nwwybY",
-                "project_id": "r8axuw4u",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "pG2APhxP",
-                "project_id": "rI0hvYcd",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "AqXSvu6M",
-                "project_id": "rUgZvGzi",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "HcfMgmXT",
-                "project_id": "rcTfTZr3",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "LGYOH4RN",
-                "project_id": "sGmHWmeL",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "WmJeyttw",
-                "project_id": "smUP7V3r",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "Rir70mD8",
-                "project_id": "tEcWzCZz",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "SkWcZo5g",
-                "project_id": "tN4E9NfV",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "x824YAov",
-                "project_id": "uLbm7CG6",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "pguEMpy9",
-                "project_id": "uXXizFIs",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "OggLUOr6",
-                "project_id": "w7ThoJFB",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "vOAKK0JB",
-                "project_id": "x1hIzbuY",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "mrQ8ZiyU",
-                "project_id": "yBW8D80W",
-                "file_name": null,
-                "dependency_type": "embedded"
-            },
-            {
-                "version_id": "rr7vSO7n",
-                "project_id": "yfDziwn1",
+                "version_id": "Ox1racg8",
+                "project_id": "1IjD5062",
                 "file_name": null,
                 "dependency_type": "embedded"
             },
@@ -4300,9 +3808,501 @@
                 "dependency_type": "embedded"
             },
             {
+                "version_id": "WmJeyttw",
+                "project_id": "smUP7V3r",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "jVuY2dwJ",
+                "project_id": "e0M1UDsY",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "cp6X3Hrn",
+                "project_id": "LN9BxssP",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "OggLUOr6",
+                "project_id": "w7ThoJFB",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "M0ndiav7",
+                "project_id": "PtjYWJkn",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "mrQ8ZiyU",
+                "project_id": "yBW8D80W",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "pguEMpy9",
+                "project_id": "uXXizFIs",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "crC7YOpw",
+                "project_id": "3qsfQtE9",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "AqXSvu6M",
+                "project_id": "rUgZvGzi",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "afsFajDC",
+                "project_id": "Ha28R6CL",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "CvQ5xrW8",
+                "project_id": "6vhHOIKw",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "MU5nRGAS",
+                "project_id": "otVJckYQ",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "SkWcZo5g",
+                "project_id": "tN4E9NfV",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "48hFxWw7",
+                "project_id": "LQ3K71Q1",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "7GB1hLrr",
+                "project_id": "T8MMXTpr",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "fNHCa6bl",
+                "project_id": "nvQzSEkH",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "r6uVoUxU",
+                "project_id": "QdG47OkI",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "ybV7vGT5",
+                "project_id": "mOgUt4GM",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "eoCzDGY0",
+                "project_id": "aEK1KhsC",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "xmDYAuBB",
+                "project_id": "kYuIpRLv",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "KMOzdYko",
+                "project_id": "WwbubTsV",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "zzelzVhK",
+                "project_id": "NK39zBp2",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "PLfxrDkh",
+                "project_id": "8qkXwOnk",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "HcfMgmXT",
+                "project_id": "rcTfTZr3",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "yYzR60Xd",
+                "project_id": "TQTTVgYE",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "h1QpxElt",
+                "project_id": "kqJFAPU9",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "pmFyu3Sz",
+                "project_id": "EsAfCjCV",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "hyejM5za",
+                "project_id": "NNAgCjsB",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "45ETshvT",
+                "project_id": "YL57xq9U",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "5xvCCRjJ",
+                "project_id": "NRjRiSSD",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "OYEDRRp8",
+                "project_id": "onSQdWhM",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "4GyXKCLd",
+                "project_id": "AANobbMI",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "gq5isc7f",
+                "project_id": "G1epq3jN",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "MPv4hk2Z",
+                "project_id": "Nz0RSWrF",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "Q3Z6GESL",
+                "project_id": "BdKIyOLe",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "XGzaAlX8",
+                "project_id": "YBz7DOs8",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "EQNuBJf5",
+                "project_id": "codAaoxh",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "8QSY2PFn",
+                "project_id": "LXJlc5WJ",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "rr7vSO7n",
+                "project_id": "yfDziwn1",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "Rir70mD8",
+                "project_id": "tEcWzCZz",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "eBZiZ9NS",
+                "project_id": "9s6osm5g",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "OdWrtk1W",
+                "project_id": "YC6MzoCi",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "AkivIlyi",
+                "project_id": "8shC1gFX",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "fkLiGoHs",
+                "project_id": "Bh37bMuy",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "j53ChsnW",
+                "project_id": "ncKjyGm3",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "dEq1ncBU",
+                "project_id": "89Wsn8GD",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
                 "version_id": null,
                 "project_id": null,
                 "file_name": "litematica-fabric-1.20.1-0.15.3.jar",
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "jEhoJmNF",
+                "project_id": "NcUtCpym",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "Pjto4zdj",
+                "project_id": "qQyHxfxd",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "MrgEk6HV",
+                "project_id": "XeEZ3fK2",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "Hk6zJ311",
+                "project_id": "6udpuGCH",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "OwhUSOUM",
+                "project_id": "MPCX6s5C",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "4KgMjBc7",
+                "project_id": "Wb5oqrBJ",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "HZYU0kdg",
+                "project_id": "H8CaAYZC",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "6lwzxSI3",
+                "project_id": "DIlqwRFH",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "ebLQ6HBv",
+                "project_id": "1bokaNcj",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "gLlBbHbZ",
+                "project_id": "ihnBJ6on",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "tAwdMmKY",
+                "project_id": "P7dR8mSH",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "LGYOH4RN",
+                "project_id": "sGmHWmeL",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "pUVuXS69",
+                "project_id": "JuksLGBQ",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "oOXA8xCw",
+                "project_id": "OL1EGja1",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "3m5znPWm",
+                "project_id": "51shyZVL",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "UldUTomA",
+                "project_id": "K8iUn9o9",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "kVjQWX0l",
+                "project_id": "lhGA9TYQ",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "YYfmFXPZ",
+                "project_id": "GcWjdA9I",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "VlLxDisa",
+                "project_id": "Orvt0mRa",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "v82u5BX1",
+                "project_id": "qyVF9oeo",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "TGJXKoTQ",
+                "project_id": "Nv2fQJo5",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "Y9X3wWP7",
+                "project_id": "HpdHOPOp",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "r6EhfuUa",
+                "project_id": "2M01OLQq",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "XJ7ktk4d",
+                "project_id": "Kn6gOLwE",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "5a6694zO",
+                "project_id": "BVzZfTc1",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "54nwwybY",
+                "project_id": "r8axuw4u",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "aQYNRsGo",
+                "project_id": "QwxR6Gcd",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "115Ubn3O",
+                "project_id": "5ZwdcRci",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "1srBlHhv",
+                "project_id": "3IuO68q1",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "vOAKK0JB",
+                "project_id": "x1hIzbuY",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "zoca1OgH",
+                "project_id": "nfn13YXA",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "ZOhVauWn",
+                "project_id": "1u6JkXh5",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "pG2APhxP",
+                "project_id": "rI0hvYcd",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "x824YAov",
+                "project_id": "uLbm7CG6",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "GR7zopVV",
+                "project_id": "O7RBXm3n",
+                "file_name": null,
+                "dependency_type": "embedded"
+            },
+            {
+                "version_id": "G2PcCpZl",
+                "project_id": "1eAoo2KR",
+                "file_name": null,
                 "dependency_type": "embedded"
             }
         ]

@@ -1,12 +1,11 @@
 import requests
 import json
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Blueprint
 
 
-app = Flask(__name__)
-app.secret_key = "secret_key"
+dependencies = Blueprint("dependencies", __name__)
 
-@app.route("/")
+@dependencies.route("/")
 def index():
     return render_template("index.html")
 
@@ -14,7 +13,7 @@ def index():
 
 def add_dependencies(modpack_version, name, version_id, version_number, loaders):
     
-    with open('List_dependencies.json', 'r') as file:
+    with open('app/data/list_dependencies.json', 'r') as file:
         modpack_info = json.load(file)
     
     if modpack_version not in modpack_info:
@@ -42,7 +41,7 @@ def add_dependencies(modpack_version, name, version_id, version_number, loaders)
 
 
 
-    with open('List_dependencies.json', 'w') as file:
+    with open('app/data/list_dependencies.json', 'w') as file:
         json.dump(modpack_info, file, indent=4)
 
 
@@ -138,13 +137,13 @@ def initialize_id(id):
         print(f"Error: {reponse.status_code}") 
 
     # Enregistrer les dependances dans le fichier dependencies.json
-    with open("dependencies.json", "w") as json_file: 
+    with open("app/data/dependencies.json", "w") as json_file: 
         json.dump(data, json_file, indent=4)
 
         print("Dependencies data saved to 'dependencies.json'")
 
     # Nettoyer le fichier List_dependencies.json
-    with open("List_dependencies.json", "w") as file:
+    with open("app/data/list_dependencies.json", "w") as file:
         file.write("{}")
     
     counter = 0
@@ -153,16 +152,10 @@ def initialize_id(id):
 
 
 
-@app.route("/submit", methods=["POST"])
+@dependencies.route("/submit", methods=["POST"])
 def submit():
     version1 = request.form.get("version1")
     version2 = request.form.get("version2")
     id = request.form.get("id")
     initialize_id(id)
     return f"Vous avez entré : {version1} et {version2} et {id}"
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
