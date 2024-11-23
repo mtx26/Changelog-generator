@@ -22,8 +22,8 @@
         "files": [
             {
                 "hashes": {
-                    "sha1": "98f2d0a36658c2b6fe541d19ab5f185f5b3cae38",
-                    "sha512": "f17d3a83915c2adcd44cc89228a092059e86c94ef7c288a90a4c6a6b8deb9836b2fc5b60ca1ad78cda3fc10db4741f9d1f75ba85c5602344822d9c5516059558"
+                    "sha512": "f17d3a83915c2adcd44cc89228a092059e86c94ef7c288a90a4c6a6b8deb9836b2fc5b60ca1ad78cda3fc10db4741f9d1f75ba85c5602344822d9c5516059558",
+                    "sha1": "98f2d0a36658c2b6fe541d19ab5f185f5b3cae38"
                 },
                 "url": "https://cdn.modrinth.com/data/YcOwVsza/versions/e6DdvJBP/Fastpack%201.0.8.mrpack",
                 "filename": "Fastpack 1.0.8.mrpack",
@@ -592,8 +592,8 @@
         "files": [
             {
                 "hashes": {
-                    "sha1": "6392b47e0a3752c2d47b1f8a4ede659a64e876f1",
-                    "sha512": "9249e5f9cc192288e5d54c8bc98672775af3965fe5c5b3bde8b7366dfe2701ab4ac7fb61360738d678810490ded617b9f11a42b07cbac2c3af31b7009532d4e6"
+                    "sha512": "9249e5f9cc192288e5d54c8bc98672775af3965fe5c5b3bde8b7366dfe2701ab4ac7fb61360738d678810490ded617b9f11a42b07cbac2c3af31b7009532d4e6",
+                    "sha1": "6392b47e0a3752c2d47b1f8a4ede659a64e876f1"
                 },
                 "url": "https://cdn.modrinth.com/data/YcOwVsza/versions/OFfG86Gy/Fastpack%201.0.7.mrpack",
                 "filename": "Fastpack 1.0.7.mrpack",

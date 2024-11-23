@@ -1,32 +1,14 @@
 import requests
 import json
+from flask import Flask, request, render_template
 
 
-# token d'authentification
-acces_token = "mrp_fOcLmXf0VpeXx6If4AcygZ8Jj4tRYMYrXI6wuKOJSNGmlqn01wYRAF6LfTuL"
+app = Flask(__name__)
+app.secret_key = "secret_key"
 
-headers = {
-    "User-Agent": "mtx26/changelog_generator/1.0.0 (mtx_26@outlook.be)"
-}
-
-
-reponse = requests.get(version_url, headers=headers)
-
-# Vérifier si la requête a réussi
-if reponse.status_code == 200: 
-    data = reponse.json()
-else:
-    print(f"Error: {reponse.status_code}") 
-
-# Enregistrer les dependances dans le fichier dependencies.json
-with open("dependencies.json", "w") as json_file: 
-    json.dump(data, json_file, indent=4)
-
-    print("Dependencies data saved to 'dependencies.json'")
-
-# Nettoyer le fichier List_dependencies.json
-with open("List_dependencies.json", "w") as file:
-    file.write("{}")
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 
 
@@ -66,7 +48,7 @@ def add_dependencies(modpack_version, name, version_id, version_number, loaders)
 
 
 # Extraire les noms et versions des dependances avec le version_id
-def get_name_and_version(version_id, modpack_version, dependency):
+def get_name_and_version(version_id, modpack_version, dependency, headers):
     # print(version_id)
     if version_id == None:
 
@@ -105,38 +87,79 @@ def get_name_and_version(version_id, modpack_version, dependency):
 
 
 # Extraire les dependances avec entry
-def get_dependencies(dependencies, modpack_version):
+def get_dependencies(dependencies, modpack_version, headers):
     for dependency in dependencies:
         # print(dependency)
         #Extraire l'ID de la version
         version_id = dependency.get("version_id", [])
 
-        get_name_and_version(version_id, modpack_version, dependency)
+        get_name_and_version(version_id, modpack_version, dependency, headers)
 
 
 
+def find_dependencies(data, headers, counter):
+    #Extraire les noms et versions des dependances
+    for entry in data:
+
+        #Limite des 2 dernières versions
+        if counter == 2:
+            break 
+        
+        #Extraire la version du Modpack
+        modpack_version = entry.get("version_number", [])
+
+        #Extraire les dependances
+        dependencies  =  entry.get("dependencies", [])
+
+        get_dependencies(dependencies, modpack_version, headers)
+
+        counter += 1
+    print("Done")
 
 
-def find_dependencies(data, headers):
-#Extraire les noms et versions des dependances
-for entry in data:
 
-    #Limite des 2 dernières versions
-    if counter == 2:
-        break 
+def initialize_id(id):
+    # URL de l'API Modrinth pour la listes des versions
+    version_url = f"https://api.modrinth.com/v2/project/{id}/version"
+
+
+    # En-tete de la requête
+    headers = {
+        "User-Agent": "mtx26/changelog_generator/1.0.0 (mtx_26@outlook.be)"
+    }
+
+    # Obtenir les données de l'API
+    reponse = requests.get(version_url, headers=headers)
+
+    # Vérifier si la requête a réussi
+    if reponse.status_code == 200: 
+        data = reponse.json()
+    else:
+        print(f"Error: {reponse.status_code}") 
+
+    # Enregistrer les dependances dans le fichier dependencies.json
+    with open("dependencies.json", "w") as json_file: 
+        json.dump(data, json_file, indent=4)
+
+        print("Dependencies data saved to 'dependencies.json'")
+
+    # Nettoyer le fichier List_dependencies.json
+    with open("List_dependencies.json", "w") as file:
+        file.write("{}")
     
-    #Extraire la version du Modpack
-    modpack_version = entry.get("version_number", [])
+    counter = 0
 
-    #Extraire les dependances
-    dependencies  =  entry.get("dependencies", [])
-
-    get_dependencies(dependencies, modpack_version)
-
-    counter += 1
-print("Done")
+    find_dependencies(data, headers, counter)
 
 
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    version1 = request.form.get("version1")
+    version2 = request.form.get("version2")
+    id = request.form.get("id")
+    initialize_id(id)
+    return f"Vous avez entré : {version1} et {version2} et {id}"
 
 
 
