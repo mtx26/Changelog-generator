@@ -21,7 +21,7 @@ def validate_config():
     # Vérification de l'URL de l'API
     api_base_url = app.config.get("API_BASE_URL")
     if not api_base_url or not api_base_url.startswith("https://"):
-        print("L'URL de l'API Modrinth n'est pas configurée. L'application fonctionnera en mode sans API.")
+        print("Attention : aucune URL d'API n'est configurée. L'application fonctionnera en mode sans API.")
 
 # Valider la configuration
 try:
@@ -35,3 +35,12 @@ log_level = app.config.get("LOG_LEVEL", "INFO").upper()
 logging.basicConfig(level=getattr(logging, log_level), format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Ne pas appeler app.run() ici, Gunicorn s'en charge
+if __name__ == "__main__":
+    # Utiliser le port défini dans les variables d'environnement, sinon 4000 par défaut
+    port = int(os.environ.get("PORT", 4000))  
+    
+    # Activer ou désactiver le mode debug en fonction de la configuration
+    debug = app.config.get("DEBUG", False)
+    
+    # Lancer l'application Flask
+    app.run(host="0.0.0.0", port=port, debug=debug)
