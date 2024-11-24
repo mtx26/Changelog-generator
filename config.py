@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Configuration de base
 class Config:
     """Configuration générale pour toutes les environnements."""
     SECRET_KEY = os.getenv("SECRET_KEY", "default_dev_secret_key")
@@ -14,20 +13,16 @@ class Config:
     API_BASE_URL = os.getenv("API_BASE_URL", "https://api.example.com")
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
 
-# Configuration spécifique pour le développement
 class DevelopmentConfig(Config):
     """Configuration utilisée pendant le développement."""
     DEBUG = True
     DATABASE_URL = "sqlite:///dev.db"
 
-# Configuration spécifique pour la production
 class ProductionConfig(Config):
     """Configuration utilisée en production."""
     DEBUG = False
     SESSION_COOKIE_SECURE = True
 
-
-# Charger la configuration actuelle
 config_map = {
     "development": DevelopmentConfig,
     "production": ProductionConfig,
@@ -37,4 +32,3 @@ if CURRENT_ENV not in config_map:
     raise ValueError(f"Environnement Flask invalide : '{CURRENT_ENV}'. "
                      f"Les choix valides sont : {', '.join(config_map.keys())}")
 AppConfig = config_map[CURRENT_ENV]
-

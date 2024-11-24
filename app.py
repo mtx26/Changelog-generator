@@ -34,6 +34,4 @@ except RuntimeError as e:
 log_level = app.config.get("LOG_LEVEL", "INFO").upper()
 logging.basicConfig(level=getattr(logging, log_level), format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Lancer l'application Flask est désormais pris en charge par Gunicorn
-if __name__ == "__main__":
-    pass
+# Ne pas appeler app.run() ici, Gunicorn s'en charge
