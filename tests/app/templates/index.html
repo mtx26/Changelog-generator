@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>Changelog Generator</title>
+    </head>
+    <body>
+        <h1>Changelog Generator</h1>
+
+        <form action="/submit" method="post">
+            <label for="last_version">Last Version:</label>
+            <input type="text" id="last_version" name="last_version"><br>
+
+            <label for="new_version">New Version:</label>
+            <input type="text" id="new_version" name="new_version"><br>
+
+            <label for="id">Version ID:</label>
+            <input type="text" id="id" name="id"><br>
+
+            <button>Generate Changelog</button>
+        </form>
+    </body>
+</html>

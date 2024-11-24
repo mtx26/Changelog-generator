@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Résultats</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Soumission réussie</h1>
+
+        <div class="file-container">
+            <div class="file-box">
+                <h2>Fichier de l'ancienne version : {{ last_version }}</h2>
+                <pre id="last_version_file">{{ last_version_file }}</pre>
+                <button onclick="copyToClipboard('last_version_file')">Copier</button>
+            </div>
+
+            <div class="file-box">
+                <h2>Fichier de la nouvelle version : {{ new_version }}</h2>
+                <pre id="new_version_file">{{ new_version_file }}</pre>
+                <button onclick="copyToClipboard('new_version_file')">Copier</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges(); // Clear current selection
+            window.getSelection().addRange(range); // Select the range of text
+
+            try {
+                const successful = document.execCommand('copy'); // Copy the selection
+                const msg = successful ? 'Code copié dans le presse-papiers!' : 'Échec de la copie';
+                alert(msg);
+            } catch (err) {
+                console.error('Erreur lors de la copie:', err);
+            }
+
+            window.getSelection().removeAllRanges(); // Deselect the text
+        }
+    </script>
+</body>
+</html>

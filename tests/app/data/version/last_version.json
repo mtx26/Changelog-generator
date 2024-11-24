@@ -1,0 +1,13 @@
+{
+    "dependencies": [
+        {
+            "name": "Sodium 0.6.0 for Fabric 1.21.1",
+            "version_id": "b70slbHV",
+            "version_number": "mc1.21.1-0.6.0-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        }
+    ]
+}

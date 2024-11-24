@@ -6,7 +6,7 @@ def create_app():
     app = Flask(__name__)
     
 
-    from app.routes.dependencies.main import dependencies    # Import le blueprint "dependencies"
+    from tests.app.routes.dependencies.main_test import dependencies    # Import le blueprint "dependencies"
 
     app.register_blueprint(dependencies)    # Enregistrer le blueprint "dependencies" dans l'application
 

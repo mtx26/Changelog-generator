@@ -2,8 +2,8 @@ import requests
 import json
 from flask import Flask, request, render_template, Blueprint
 
-from app.routes.dependencies.api_interaction import get_project_versions, get_depenencies_versions
-from app.routes.dependencies.file_operations import clean_file, write_file, open_file
+from tests.app.routes.dependencies.api_interaction_test import get_project_versions, get_depenencies_versions
+from tests.app.routes.dependencies.file_operations_test import clean_file, write_file, open_file
 
 
 dependencies = Blueprint("dependencies", __name__) # Créer un blueprint "dependencies"
