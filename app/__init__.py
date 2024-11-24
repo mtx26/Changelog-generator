@@ -1,4 +1,4 @@
-# routes/__init__.py
+# app/__init__.py
 from flask import Flask
 
 # Créer une application Flask
