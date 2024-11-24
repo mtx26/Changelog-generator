@@ -9,20 +9,40 @@
 <body>
     <div class="container">
         <h1>Soumission réussie</h1>
-        <div class="info">
-            <p class="version-info"><strong>Ancienne version :</strong> {{ last_version }}</p>
-            <p class="version-info"><strong>Nouvelle version :</strong> {{ new_version }}</p>
-        </div>
 
-        <div class="info">
-            <h2>Fichier de l'ancienne version :</h2>
-            <pre>{{ last_version_file }}</pre>
-        </div>
+        <div class="file-container">
+            <div class="file-box">
+                <h2>Fichier de l'ancienne version : {{ last_version }}</h2>
+                <pre id="last_version_file">{{ last_version_file }}</pre>
+                <button onclick="copyToClipboard('last_version_file')">Copier</button>
+            </div>
 
-        <div class="info">
-            <h2>Fichier de la nouvelle version :</h2>
-            <pre>{{ new_version_file }}</pre>
+            <div class="file-box">
+                <h2>Fichier de la nouvelle version : {{ new_version }}</h2>
+                <pre id="new_version_file">{{ new_version_file }}</pre>
+                <button onclick="copyToClipboard('new_version_file')">Copier</button>
+            </div>
         </div>
     </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges(); // Clear current selection
+            window.getSelection().addRange(range); // Select the range of text
+
+            try {
+                const successful = document.execCommand('copy'); // Copy the selection
+                const msg = successful ? 'Code copié dans le presse-papiers!' : 'Échec de la copie';
+                alert(msg);
+            } catch (err) {
+                console.error('Erreur lors de la copie:', err);
+            }
+
+            window.getSelection().removeAllRanges(); // Deselect the text
+        }
+    </script>
 </body>
 </html>

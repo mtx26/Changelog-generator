@@ -19,6 +19,41 @@ h1 {
     margin-bottom: 20px; /* Adding some space below the heading */
 }
 
+/* File container for side-by-side display */
+.file-container {
+    display: flex; /* Using flexbox for layout */
+    justify-content: space-between; /* Space between the file boxes */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Styling for each file box */
+.file-box {
+    flex: 1; /* Each box takes equal width */
+    margin: 10px; /* Margin around each box */
+    padding: 15px; /* Padding within each box */
+    background-color: #fff; /* White background for file boxes */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Button styling */
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text color */
+    border: none; /* Removing default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding inside the button */
+    font-size: 14px; /* Comfortable font size */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    margin-top: 10px; /* Space above button */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
 /* Form styling */
 form {
     background-color: white; /* White background for the form */
@@ -45,34 +80,66 @@ input[type="text"] {
     font-size: 16px; /* Comfortable font size */
 }
 
-/* Button styling */
-button {
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white; /* White text color */
-    border: none; /* Removing default border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 15px; /* Padding inside the button */
-    font-size: 16px; /* Comfortable font size */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition for background color */
-}
-
-/* Button hover effect */
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-input[type="text"]:hover {
-    border-color: #0056b3; /* Darker blue border on hover */
-}
-
 /* Responsive design for smaller screens */
 @media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
     form {
         padding: 15px; /* Less padding on smaller screens */
+        max-width: 100%; /* Allow form to take full width */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Slightly smaller heading on mobile */
     }
 
     input[type="text"], button {
         font-size: 14px; /* Slightly smaller font size for inputs and buttons */
     }
+
+    .file-container {
+        flex-direction: column; /* Stack boxes on top of each other */
+    }
+
+    .file-box {
+        margin: 10px 0; /* Margin only on top and bottom on small screens */
+    }
+}
+
+/* Additional styles for the result page */
+.container {
+    max-width: 800px; /* Maximum width for the container */
+    margin: 50px auto; /* Centering the container */
+    padding: 20px; /* Adding padding */
+    background-color: #fff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.info {
+    margin: 20px 0; /* Margin above and below the info sections */
+    padding: 15px; /* Padding within the info sections */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fafafa; /* Light background for info sections */
+}
+
+.version-info {
+    font-size: 1.1em; /* Slightly larger font size */
+    color: #555; /* Darker gray for version info */
+}
+
+h2 {
+    color: #333; /* Dark gray text for headers */
+    font-size: 1.5em; /* Larger font size for subheaders */
+    margin-bottom: 10px; /* Space below subheaders */
+}
+
+pre {
+    background-color: #eaeaea; /* Light gray background for code blocks */
+    padding: 10px; /* Padding within code blocks */
+    border-radius: 4px; /* Rounded corners for code blocks */
+    overflow-x: auto; /* Horizontal scrollbar for long lines */
 }
