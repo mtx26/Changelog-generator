@@ -1,14 +1,40 @@
 import os
 from dotenv import load_dotenv
 
-# Charger les variables d'environnement depuis un fichier .env
 load_dotenv()
 
+# Configuration de base
 class Config:
-    # Récupérer la clé secrète de l'environnement, avec une valeur par défaut pour le développement
+    """Configuration générale pour toutes les environnements."""
     SECRET_KEY = os.getenv("SECRET_KEY", "default_dev_secret_key")
-    
-    # Autres configurations potentielles
-    DEBUG = os.getenv("DEBUG", "False").lower() == "true"  # Activer/désactiver le mode débogage
-    DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///app.db")  # URL de connexion à la base de données
-    API_BASE_URL = os.getenv("API_BASE_URL", "https://api.example.com")  # Exemple d'API externe
+    DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+    DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///app.db")
+    SESSION_COOKIE_SECURE = os.getenv("SESSION_COOKIE_SECURE", "False").lower() == "true"
+    SESSION_COOKIE_HTTPONLY = True
+    API_BASE_URL = os.getenv("API_BASE_URL", "https://api.example.com")
+    LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+
+# Configuration spécifique pour le développement
+class DevelopmentConfig(Config):
+    """Configuration utilisée pendant le développement."""
+    DEBUG = True
+    DATABASE_URL = "sqlite:///dev.db"
+
+# Configuration spécifique pour la production
+class ProductionConfig(Config):
+    """Configuration utilisée en production."""
+    DEBUG = False
+    SESSION_COOKIE_SECURE = True
+
+
+# Charger la configuration actuelle
+config_map = {
+    "development": DevelopmentConfig,
+    "production": ProductionConfig,
+}
+CURRENT_ENV = os.getenv("FLASK_ENV", "development").lower()
+if CURRENT_ENV not in config_map:
+    raise ValueError(f"Environnement Flask invalide : '{CURRENT_ENV}'. "
+                     f"Les choix valides sont : {', '.join(config_map.keys())}")
+AppConfig = config_map[CURRENT_ENV]
+
