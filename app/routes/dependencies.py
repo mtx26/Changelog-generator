@@ -10,49 +10,35 @@ def index():
     return render_template("index.html") # Afficher la page "index.html"
 
 
+def update_dependencies_file(file_path, name, version_id, version_number, loaders):
+    try:
+        with open(file_path, 'r') as file:
+            modpack_info = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+            print(f"Erreur : impossible de charger le fichier {file_path}.")
+            return {}
+        
+    dependencies = modpack_info.get("dependencies", [])
+    
+    dependencies.append({
+        'name': name,
+        'version_id': version_id,
+        'version_number': version_number,
+        'loaders': loaders
+    })
+    
+    modpack_info["dependencies"] = dependencies
+    
+    with open(file_path, 'w') as file:
+        json.dump(modpack_info, file, indent=4)
+
+
+
 # Ajouter les dependances dans le fichier "List_dependencies.json"
 def add_dependencies(name, version_id, version_number, loaders, version):
-    if version == "last": # Verifier si la version est "last
-        with open('app/data/version/last_version.json', 'r') as file: # Ouvrir le fichier en mode lecture
-            modpack_info = json.load(file) # Charger le contenu du fichier
+    file_path = f"app/data/version/{version}_version.json"
+    update_dependencies_file(file_path, name, version_id, version_number, loaders)
 
-        dependencies = modpack_info.get("dependencies", []) # Extraire les dependances existantes dans le fichier "last_version.json"
-
-        # Ajouter les nouvelles dependances
-        dependencies.append({
-                'name': name,
-                'version_id': version_id,
-                'version_number': version_number,
-                'loaders': loaders
-        })
-
-        modpack_info["dependencies"] = dependencies # Ajouter les nouvelles dependances dans la liste des dependances
-
-        # Enregistrer les nouvelles dependances dans le fichier "last_version.json"
-        with open('app/data/version/last_version.json', 'w') as file:
-            json.dump(modpack_info, file, indent=4)
-            
-
-    elif version == "new": # Verifier si la version est "new"
-        with open('app/data/version/new_version.json', 'r') as file: # Ouvrir le fichier en mode lecture
-            modpack_info = json.load(file) # Charger le contenu du fichier
-
-
-        dependencies = modpack_info.get("dependencies", []) # Extraire les dependances existantes dans le fichier "new_version.json"
-
-        # Ajouter les nouvelles dependances
-        dependencies.append({
-                'name': name,
-                'version_id': version_id,
-                'version_number': version_number,
-                'loaders': loaders
-        })
-
-        modpack_info["dependencies"] = dependencies # Ajouter les nouvelles dependances dans la liste des dependances
-
-        # Enregistrer les nouvelles dependances dans le fichier "new_version.json"
-        with open('app/data/version/new_version.json', 'w') as file:
-            json.dump(modpack_info, file, indent=4)
 
 
 # Extraire les noms et versions des dependances avec le "version_id"
@@ -103,49 +89,26 @@ def get_dependencies(dependencies, headers, version):
         get_name_and_version(version_id, dependency, headers, version) # Extraire le nom, la version_number et le loaders
 
 
-# Extraire les dependances pour version du modpack
-def find_dependencies(data, headers, last_version, new_version):
-    #Extraire les noms et versions des dependances
-
+def find_dependencies(data, headers, versions_mapping):
+    # `versions_mapping` est un dictionnaire : {"last": last_version, "new": new_version}
     counter = 0
-    for entry in data:
-            
-        modpack_version = entry.get("version_number", []) # Extraire les versions du modpack
-
-        # Vérifier si la version du modpack est dans la liste des 2 versions
-        if modpack_version in last_version:
-
-            dependencies  =  entry.get("dependencies", []) # Extraire les dependances de la version dans l'API
-
-            get_dependencies(dependencies, headers, "last") # Extraire les dependances
-
-            counter += 1
 
     for entry in data:
-            
-        modpack_version = entry.get("version_number", []) # Extraire les versions du modpack
+        modpack_version = entry.get("version_number", [])
+        for version_name, version_list in versions_mapping.items():
+            if modpack_version in version_list:
+                dependencies = entry.get("dependencies", [])
+                get_dependencies(dependencies, headers, version_name)
+                counter += 1
 
-        # Vérifier si la version du modpack est dans la liste des 2 versions
-        if modpack_version in new_version:
-
-            dependencies  =  entry.get("dependencies", []) # Extraire les dependances de la version dans l'API
-
-            get_dependencies(dependencies, headers, "new") # Extraire les dependances
-
-            counter += 1
-
-    # Vérifier si les 2 versions sont valides
     if counter == 2:
-        print("Fin de la recherche des dependances !")
-
-        #future prochaine function
-
-    else:
+        print("Fin de la recherche des dépendances !")
+    elif counter > 2:
         print("Erreur de version")
 
 # Nettoyer le fichier List_dependencies.json    
-def clean_file(files):
-    with open(files, "w") as file: # Ouvrir le fichier en mode ecriture
+def clean_file(file_path):
+    with open(file_path, "w") as file: # Ouvrir le fichier en mode ecriture
         file.write("{}") # Supprimer le contenu
     
 
@@ -169,10 +132,10 @@ def initialize_id(id, last_version, new_version):
         print(f"Error: {reponse.status_code}")
         print("Version introuvable !")
 
-    clean_file(files = "app/data/version/last_version.json")   # Nettoyer le fichier "last_version.json"
-    clean_file(files = "app/data/version/new_version.json")    # Nettoyer le fichier "new_version.json"
+    clean_file(file_path = "app/data/version/last_version.json")   # Nettoyer le fichier "last_version.json"
+    clean_file(file_path = "app/data/version/new_version.json")    # Nettoyer le fichier "new_version.json"
 
-    find_dependencies(data, headers, last_version, new_version)
+    find_dependencies(data, headers, {"last": last_version, "new": new_version}) # Initialiser le fichier "List_dependencies.json"
 
 
 # Recuperer les informations du formulaire dans template/index.html
