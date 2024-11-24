@@ -30,6 +30,8 @@ def update_dependencies_file(file_path, name, version_id, version_number, loader
     modpack_info["dependencies"] = dependencies
     
     write_file(file_path, modpack_info) # Ecrire dans le fichier "file_path" le contenu "modpack_info"
+
+    
     
         
 
@@ -144,4 +146,14 @@ def submit():
 
     main(id, last_version, new_version) # Initialiser le fichier "List_dependencies.json"
 
-    return f"Vous avez entré : {last_version} et {new_version} et {id}"
+    last_version_file = open_file(file_path = "app/data/version/last_version.json") # Ouvrir le fichier "last_version.json"
+    new_version_file = open_file(file_path = "app/data/version/new_version.json")  # Ouvrir le fichier "new_version.json"
+
+    last_version_file_json = json.dumps(last_version_file, indent=4) # Ecrire le contenu du fichier "last_version.json" dans un JSON
+    new_version_file_json = json.dumps(new_version_file, indent=4)  # Ecrire le contenu du fichier "new_version.json" dans un JSON
+
+    return render_template("submit_result.html", 
+                           last_version=last_version, 
+                           new_version=new_version, 
+                           last_version_file=last_version_file_json, 
+                           new_version_file=new_version_file_json)
