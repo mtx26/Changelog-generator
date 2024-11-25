@@ -24,16 +24,24 @@ h1 {
     display: flex; /* Using flexbox for layout */
     justify-content: space-between; /* Space between the file boxes */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    text-align: center;
 }
 
 /* Styling for each file box */
 .file-box {
-    flex: 1; /* Each box takes equal width */
     margin: 10px; /* Margin around each box */
     padding: 15px; /* Padding within each box */
     background-color: #fff; /* White background for file boxes */
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: inline-block;
+    flex: 1 1 calc(33.33% - 20px); /* 3 boîtes par ligne avec un espace de 20px */
+    max-width: calc(50% - 20px);
+}
+
+.code-container {
+    text-align: left;
+
 }
 
 /* Button styling */
@@ -80,38 +88,9 @@ input[type="text"] {
     margin-bottom: 15px; /* Space below each input */
     font-size: 16px; /* Comfortable font size */
 }
-
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    body {
-        padding: 10px; /* Reduce padding on smaller screens */
-    }
-
-    form {
-        padding: 15px; /* Less padding on smaller screens */
-        max-width: 100%; /* Allow form to take full width */
-    }
-
-    h1 {
-        font-size: 1.5em; /* Slightly smaller heading on mobile */
-    }
-
-    input[type="text"], button {
-        font-size: 14px; /* Slightly smaller font size for inputs and buttons */
-    }
-
-    .file-container {
-        flex-direction: column; /* Stack boxes on top of each other */
-    }
-
-    .file-box {
-        margin: 10px 0; /* Margin only on top and bottom on small screens */
-    }
-}
-
 /* Additional styles for the result page */
 .container {
-    max-width: 800px; /* Maximum width for the container */
+    max-width: calc(100% - 40px); /* Maximum width for the container */
     margin: 50px auto; /* Centering the container */
     padding: 20px; /* Adding padding */
     background-color: #fff; /* White background for the container */
@@ -143,4 +122,35 @@ pre {
     padding: 10px; /* Padding within code blocks */
     border-radius: 4px; /* Rounded corners for code blocks */
     overflow-x: auto; /* Horizontal scrollbar for long lines */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    form {
+        padding: 15px; /* Less padding on smaller screens */
+        max-width: 100%; /* Allow form to take full width */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Slightly smaller heading on mobile */
+    }
+
+    input[type="text"], button {
+        font-size: 14px; /* Slightly smaller font size for inputs and buttons */
+    }
+
+    .file-container {
+        flex-direction: column; /* Stack boxes on top of each other */
+        gap: 10px; /* Space between boxes */
+    }
+
+    .file-box {
+        margin: 10px 0; /* Margin only on top and bottom on small screens */
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }

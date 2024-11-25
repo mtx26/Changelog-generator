@@ -152,6 +152,9 @@ def submit():
     last_version_file_json = json.dumps(last_version_file, indent=4) # Ecrire le contenu du fichier "last_version.json" dans un JSON
     new_version_file_json = json.dumps(new_version_file, indent=4)  # Ecrire le contenu du fichier "new_version.json" dans un JSON
 
+    clean_file(file_path = "app/data/version/last_version.json")   # Nettoyer le fichier "last_version.json"
+    clean_file(file_path = "app/data/version/new_version.json")    # Nettoyer le fichier "new_version.json"
+
     return render_template("submit_result.html", 
                            last_version=last_version, 
                            new_version=new_version, 
