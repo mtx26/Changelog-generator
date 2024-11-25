@@ -1,1 +1,486 @@
-{}
+{
+    "dependencies": [
+        {
+            "name": "[EMF] Entity Model Features",
+            "version_id": "Qql6TI9W",
+            "project_id": "4I1XuqiY",
+            "version_number": "2.2.6",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "[ETF] Entity Texture Features",
+            "version_id": "qQQ5ffvS",
+            "project_id": "BVzZfTc1",
+            "version_number": "6.2.5",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Animatica",
+            "version_id": "LHBm6fEV",
+            "project_id": "PRN43VSY",
+            "version_number": "0.6.1+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Better Mount HUD",
+            "version_id": "yyJushgo",
+            "project_id": "kqJFAPU9",
+            "version_number": "1.2.4",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Capes",
+            "version_id": "6SzVPVR4",
+            "project_id": "89Wsn8GD",
+            "version_number": "1.5.4+1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Chat Reporting Helper",
+            "version_id": "1IyP82KW",
+            "project_id": "tN4E9NfV",
+            "version_number": "4.23",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "CIT Resewn",
+            "version_id": "FnarCxUt",
+            "project_id": "otVJckYQ",
+            "version_number": "1.2.1+1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Cloth Config API",
+            "version_id": "HpMb5wGb",
+            "project_id": "9s6osm5g",
+            "version_number": "15.0.140+fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Continuity",
+            "version_id": "NksUpFjf",
+            "project_id": "1IjD5062",
+            "version_number": "3.0.0-beta.5+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Controlify",
+            "version_id": "QiCZiPOr",
+            "project_id": "DOUdJVEm",
+            "version_number": "2.0.0-beta.14+1.21-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Cubes Without Borders",
+            "version_id": "fbzkv9Iu",
+            "project_id": "ETlrkaYF",
+            "version_number": "2.1.1+1.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Debugify",
+            "version_id": "dO7QNiof",
+            "project_id": "QwxR6Gcd",
+            "version_number": "1.21.1+1.0",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Dynamic FPS",
+            "version_id": "mGzNZtjf",
+            "project_id": "LQ3K71Q1",
+            "version_number": "3.7.3",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "e4mc",
+            "version_id": "ul9OslWB",
+            "project_id": "qANg5Jrr",
+            "version_number": "5.2.1-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Enhanced Block Entities",
+            "version_id": "8OuTJDGd",
+            "project_id": "OVuFYfre",
+            "version_number": "0.10.1+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Entity Culling",
+            "version_id": "kPbJu8eF",
+            "project_id": "NNAgCjsB",
+            "version_number": "1.7.0",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Fabric API",
+            "version_id": "WTaAx4ah",
+            "project_id": "P7dR8mSH",
+            "version_number": "0.105.0+1.21.1",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Fabric Language Kotlin",
+            "version_id": "B0fZidZi",
+            "project_id": "Ha28R6CL",
+            "version_number": "1.12.3+kotlin.2.0.21",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "FabricSkyboxes",
+            "version_id": "yhQrKNAJ",
+            "project_id": "YBz7DOs8",
+            "version_number": "mc1.21-0.7.4",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "FabricSkyBoxes Interop",
+            "version_id": "A3n8pliV",
+            "project_id": "HpdHOPOp",
+            "version_number": "mc1.21-1.4.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Fabrishot",
+            "version_id": "HfdXLVRy",
+            "project_id": "3qsfQtE9",
+            "version_number": "1.14.1",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Fast Better Grass",
+            "version_id": "1lpmCieT",
+            "project_id": "dspVZXKP",
+            "version_number": "1.21",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "FastQuit",
+            "version_id": "dIGKewCo",
+            "project_id": "x1hIzbuY",
+            "version_number": "3.0.0+1.20.6",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "FerriteCore",
+            "version_id": "wmIZ4wP4",
+            "project_id": "uXXizFIs",
+            "version_number": "7.0.0-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "ImmediatelyFast",
+            "version_id": "ahszC7KU",
+            "project_id": "5ZwdcRci",
+            "version_number": "1.2.21+1.21.1-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Indium",
+            "version_id": "Z8VpxxGh",
+            "project_id": "Orvt0mRa",
+            "version_number": "1.0.35+mc1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Iris Shaders",
+            "version_id": "kuOV4Ece",
+            "project_id": "YL57xq9U",
+            "version_number": "1.7.3+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "LambDynamicLights",
+            "version_id": "jMgX3AR4",
+            "project_id": "yBW8D80W",
+            "version_number": "3.0.1+1.21.1",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Language Reload",
+            "version_id": "fpDBBXvT",
+            "project_id": "uLbm7CG6",
+            "version_number": "1.6.1+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Lithium",
+            "version_id": "9x0igjLz",
+            "project_id": "gvQqBUqZ",
+            "version_number": "mc1.21.1-0.13.1",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Main Menu Credits",
+            "version_id": "eUN0SbET",
+            "project_id": "qJDfP7WN",
+            "version_number": "1.2.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "MixinTrace",
+            "version_id": "LGYOH4RN",
+            "project_id": "sGmHWmeL",
+            "version_number": "1.1.1+1.17",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Mod Menu",
+            "version_id": "3ib3Uvvv",
+            "project_id": "mOgUt4GM",
+            "version_number": "11.0.2",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Mod Menu Helper.zip",
+            "version_id": "Mod Menu Helper.zip",
+            "project_id": "none",
+            "version_number": "none",
+            "loaders": "none"
+        },
+        {
+            "name": "Model Gap Fix",
+            "version_id": "FUZo6yCk",
+            "project_id": "QdG47OkI",
+            "version_number": "1.21-1.6",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "ModernFix",
+            "version_id": "T1ftCUJv",
+            "project_id": "nmDcB62a",
+            "version_number": "5.19.3+mc1.21.1",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "More Chat History",
+            "version_id": "3siYJiWG",
+            "project_id": "8qkXwOnk",
+            "version_number": "1.3.1",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "More Culling",
+            "version_id": "BUxgeDdf",
+            "project_id": "51shyZVL",
+            "version_number": "0.26.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "No Chat Reports",
+            "version_id": "riMhCAII",
+            "project_id": "qQyHxfxd",
+            "version_number": "Fabric-1.21-v2.8.0",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "OptiGUI",
+            "version_id": "BUvJCGus",
+            "project_id": "JuksLGBQ",
+            "version_number": "2.3.0-beta.5+1.21",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Paginated Advancements & Custom Frames",
+            "version_id": "fQnpir9a",
+            "project_id": "pJogNFap",
+            "version_number": "2.5.1",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Polytone",
+            "version_id": "jnmgvsoH",
+            "project_id": "3qAYkBMB",
+            "version_number": "1.21-2.3.8",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Puzzle",
+            "version_id": "TMFxzCSV",
+            "project_id": "3IuO68q1",
+            "version_number": "2.0.1-fabric",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Reese's Sodium Options",
+            "version_id": "6gZ19wc6",
+            "project_id": "Bh37bMuy",
+            "version_number": "mc1.21-1.7.3",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Remove Reloading Screen",
+            "version_id": "J4n3Uh3Y",
+            "project_id": "ZP7xHXtw",
+            "version_number": "5.0.8+mc1.21.1-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Sodium",
+            "version_id": "RncWhTxD",
+            "project_id": "AANobbMI",
+            "version_number": "mc1.21-0.5.11",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Sodium Extra",
+            "version_id": "uuhVlRGv",
+            "project_id": "PtjYWJkn",
+            "version_number": "mc1.21-0.5.7",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Translations for Sodium",
+            "version_id": "TZ7Pon7A",
+            "project_id": "yfDziwn1",
+            "version_number": "v4.7.0",
+            "loaders": [
+                "minecraft"
+            ]
+        },
+        {
+            "name": "YetAnotherConfigLib (YACL)",
+            "version_id": "Y8Wa10Re",
+            "project_id": "1eAoo2KR",
+            "version_number": "3.5.0+1.21-fabric",
+            "loaders": [
+                "fabric"
+            ]
+        },
+        {
+            "name": "Your Options Shall Be Respected (YOSBR)",
+            "version_id": "KMOzdYko",
+            "project_id": "WwbubTsV",
+            "version_number": "0.1.2",
+            "loaders": [
+                "fabric",
+                "quilt"
+            ]
+        },
+        {
+            "name": "Zoomify",
+            "version_id": "vg7GaKbh",
+            "project_id": "w7ThoJFB",
+            "version_number": "2.14.0+1.21",
+            "loaders": [
+                "fabric"
+            ]
+        }
+    ]
+}

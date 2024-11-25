@@ -2,8 +2,9 @@ import requests
 import json
 from flask import Flask, request, render_template, Blueprint
 
-from app.routes.dependencies.api_interaction import get_project_versions, get_depenencies_versions, get_project_info
-from app.routes.dependencies.file_operations import clean_file, write_file, open_file, sort_data
+from app.routes.dependencies.__init__ import *
+from app.routes.compare.__init__ import status
+
 
 
 dependencies = Blueprint("dependencies", __name__) # Créer un blueprint "dependencies"
@@ -168,6 +169,8 @@ def submit():
 
     last_version_file_json = finish_last_version() # Trier les fichiers et les envoyer dans un JSON
     new_version_file_json = finish_new_version()
+
+    status()
 
 
     return render_template("submit_result.html", 
