@@ -37,6 +37,12 @@ h1 {
     display: inline-block;
     flex: 1 1 calc(33.33% - 20px); /* 3 boîtes par ligne avec un espace de 20px */
     max-width: calc(50% - 20px);
+    max-height: 350px;
+    overflow-y: auto;
+    border: #fff;
+    border-style: solid;
+    border-width: 5px;
+
 }
 
 .code-container {
@@ -125,7 +131,7 @@ pre {
 }
 
 /* Responsive design for smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     body {
         padding: 10px; /* Reduce padding on smaller screens */
     }

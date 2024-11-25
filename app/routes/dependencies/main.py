@@ -2,7 +2,7 @@ import requests
 import json
 from flask import Flask, request, render_template, Blueprint
 
-from app.routes.dependencies.api_interaction import get_project_versions, get_depenencies_versions
+from app.routes.dependencies.api_interaction import get_project_versions, get_depenencies_versions, get_project_info
 from app.routes.dependencies.file_operations import clean_file, write_file, open_file
 
 
@@ -14,7 +14,7 @@ def index():
 
 
 # Ecrire dans les fichiers "last_version.json" et "new_version.json les dependances de ces versions
-def update_dependencies_file(file_path, name, version_id, version_number, loaders):
+def update_dependencies_file(file_path, name, version_id, project_id, version_number, loaders):
     
     modpack_info = open_file(file_path) # Ouvrir le fichier "file_path"
 
@@ -23,6 +23,7 @@ def update_dependencies_file(file_path, name, version_id, version_number, loader
     dependencies.append({
         'name': name,                       # nom de la dependance
         'version_id': version_id,           # ID de la version de la dependance
+        'project_id': project_id,           # ID du projet
         'version_number': version_number,   # version de la dependance
         'loaders': loaders                  # loaders de la dependance
     })
@@ -37,9 +38,9 @@ def update_dependencies_file(file_path, name, version_id, version_number, loader
 
 
 
-# Extraire les noms et versions des dependances avec le "version_id"
-def get_name_and_version(version_id, dependency, headers, version):
-    file_path = f"app/data/version/{version}_version.json"
+# Extraire les informations de la dependance
+def extract_dependencies_info(version_id, dependency, version_name):
+    file_path = f"app/data/version/{version_name}_version.json"
 
     if version_id == None: # Verifier si le "version_id" est vide
 
@@ -54,6 +55,7 @@ def get_name_and_version(version_id, dependency, headers, version):
             file_path,  # Chemin du fichier pour cette version du modpack (file_path)
             file_name,  # Nom de la dependance (name)
             file_name,  # ID de la version de la dependance (version_id)
+            "none",     # version du projet de la dependance (project_id)
             "none",     # version de la dependance (version_number)
             "none"      # loaders de la dependance (loaders)
             )
@@ -61,50 +63,54 @@ def get_name_and_version(version_id, dependency, headers, version):
 
     # Extraire les données de la version de la dependance pour ceux dont le "version_id" n'est pas vide
     else:
-       data = get_depenencies_versions(version_id, headers)
+        API_dependencies_versions = get_depenencies_versions(version_id)
 
-       if data: # Vérifier si la requête a réussi
-            
+        project_id = API_dependencies_versions.get("project_id", [])
+    
+        name =  get_project_info(project_id).get("title", [])
+       
+        if API_dependencies_versions: # Vérifier si la requête a réussi
             update_dependencies_file(
                 file_path,                      # Chemin du fichier pour cette version du modpack (file_path)
-                data.get("name"),               # Nom de la dependance (name)
+                name,                           # Nom de la dependance (name)
                 version_id,                     # ID de la version de la dependance (version_id)
-                data.get("version_number", []), # version de la dependance (version_number)
-                data.get("loaders", []),        # loaders de la dependance (loaders)
+                project_id,                     # version du projet de la dependance (project_id)
+                API_dependencies_versions.get("version_number", []), # version de la dependance (version_number)
+                API_dependencies_versions.get("loaders", []),        # loaders de la dependance (loaders)
                 )
 
 
-# Extraire les dependances avec entry
-def get_dependencies(dependencies, headers, version):
-    for dependency in dependencies: 
+# Extraire les dependances 
+def get_dependencies(list_dependencies, version_name):
+    for dependency in list_dependencies: 
 
         version_id = dependency.get("version_id", [])   # Extraire l'ID de la version
 
-        get_name_and_version(version_id, dependency, headers, version) # Extraire le nom, la version_number et le loaders
+        extract_dependencies_info(version_id, dependency, version_name) # Extraire le nom, la version_number et le loaders
 
 
 # Extraire les dependances des versions du modpack : "versions_mapping"
-def find_dependencies(data, headers, versions_mapping):
+def find_dependencies(Api_project_versions, versions_mapping):
     # "versions_mapping" est un dictionnaire : {"last": last_version, "new": new_version}
     counter = 0
 
-    for entry in data:
+    for project_version in Api_project_versions:
 
-        modpack_version = entry.get("version_number", []) # Extraire la version
+        modpack_version = project_version.get("version_number", []) # Extraire la version
         
         # Parcourt un dictionnaire versions_mapping, où chaque clé (version_name) 
-        # correspond à un type de version, et chaque valeur (version_list)
+        # correspond à un type de version, et chaque valeur (version)
         #
         # Exemple si versions_mapping = {"last": 1.0.7, "new": 1.0.8} :
-        #       - Vertion_name = last , version_list = 1.0.7
-        #       - Vertion_name = new , version_list = 1.0.8
+        #       - Vertion_name = last , version = 1.0.7
+        #       - Vertion_name = new , version = 1.0.8
 
-        for version_name, version_list in versions_mapping.items():
+        for version_name, version in versions_mapping.items():
 
-            if modpack_version in version_list: # Verifier si la version est dans le dictionnaire
+            if modpack_version in version: # Verifier si la version est dans le dictionnaire
                 
-                dependencies = entry.get("dependencies", []) # Extraire les dependances de la version
-                get_dependencies(dependencies, headers, version_name) 
+                list_dependencies = project_version.get("dependencies", []) # Extraire les dependances de la version
+                get_dependencies(list_dependencies, version_name) 
                 counter += 1
 
         # Limiter la recherche, une fois les deux versions trouvées
@@ -117,19 +123,15 @@ def find_dependencies(data, headers, versions_mapping):
 
 
 # Fonction principale pour la recherche des dependances
-def main(id, last_version, new_version):
+def main(project_id, last_version, new_version):
         
-    headers = {
-        "User-Agent": "mtx26/changelog_generator/1.0.0 (mtx_26@outlook.be)"
-    }
+    API_project_versions = get_project_versions(project_id)
 
-    data = get_project_versions(id, headers)
-
-    if data:
+    if API_project_versions:
         clean_file(file_path = "app/data/version/last_version.json")   # Nettoyer le fichier "last_version.json"
         clean_file(file_path = "app/data/version/new_version.json")    # Nettoyer le fichier "new_version.json"
 
-        find_dependencies(data, headers, {"last": last_version, "new": new_version}) # Initialiser le fichier "List_dependencies.json"
+        find_dependencies(API_project_versions, {"last": last_version, "new": new_version}) # Initialiser le fichier "List_dependencies.json"
 
     else:
         print("Error: Project not found")
@@ -142,9 +144,9 @@ def submit():
     last_version = request.form.get("last_version") # Ancienne version du modpack
     new_version = request.form.get("new_version") # Nouvelle version du modpack
 
-    id = request.form.get("id") # ID du modpack
+    project_id = request.form.get("id") # ID du modpack
 
-    main(id, last_version, new_version) # Initialiser le fichier "List_dependencies.json"
+    main(project_id, last_version, new_version) # Initialiser le fichier "List_dependencies.json"
 
     last_version_file = open_file(file_path = "app/data/version/last_version.json") # Ouvrir le fichier "last_version.json"
     new_version_file = open_file(file_path = "app/data/version/new_version.json")  # Ouvrir le fichier "new_version.json"
@@ -152,8 +154,6 @@ def submit():
     last_version_file_json = json.dumps(last_version_file, indent=4) # Ecrire le contenu du fichier "last_version.json" dans un JSON
     new_version_file_json = json.dumps(new_version_file, indent=4)  # Ecrire le contenu du fichier "new_version.json" dans un JSON
 
-    clean_file(file_path = "app/data/version/last_version.json")   # Nettoyer le fichier "last_version.json"
-    clean_file(file_path = "app/data/version/new_version.json")    # Nettoyer le fichier "new_version.json"
 
     return render_template("submit_result.html", 
                            last_version=last_version, 
