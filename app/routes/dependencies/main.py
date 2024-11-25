@@ -3,7 +3,7 @@ import json
 from flask import Flask, request, render_template, Blueprint
 
 from app.routes.dependencies.api_interaction import get_project_versions, get_depenencies_versions, get_project_info
-from app.routes.dependencies.file_operations import clean_file, write_file, open_file
+from app.routes.dependencies.file_operations import clean_file, write_file, open_file, sort_data
 
 
 dependencies = Blueprint("dependencies", __name__) # Créer un blueprint "dependencies"
@@ -137,6 +137,24 @@ def main(project_id, last_version, new_version):
         print("Error: Project not found")
 
 
+# Fonction de fin et de tris
+def finish_last_version():
+    last_version_file = open_file(file_path = "app/data/version/last_version.json") # Ouvrir le fichier "last_version.json"
+    last_version_file = sort_data(last_version_file, "dependencies", "name") # Trier la variable "last_version_file" par odre alphabétique de la clé "name" sous la clé "key_main"
+    clean_file(file_path = "app/data/version/last_version.json")   # Nettoyer le fichier "last_version.json"
+    write_file(file_path = "app/data/version/last_version.json", data = last_version_file) # Ecrire le contenu du fichier "last_version.json"
+    last_version_file_json = json.dumps(last_version_file, indent=4) # Ecrire le contenu du fichier "last_version.json" dans un JSON
+
+    return last_version_file_json
+def finish_new_version():
+    new_version_file = open_file(file_path = "app/data/version/new_version.json")  # Ouvrir le fichier "new_version.json"
+    new_version_file = sort_data(new_version_file, "dependencies", "name") # Trier la variable "new_version_file" par odre alphabétique de la clé "name" sous la clé "key_main"
+    clean_file(file_path = "app/data/version/new_version.json")    # Nettoyer le fichier "new_version.json"
+    write_file(file_path = "app/data/version/new_version.json", data = new_version_file)  # Ecrire le contenu du fichier "new_version.json"
+    new_version_file_json = json.dumps(new_version_file, indent=4)  # Ecrire le contenu du fichier "new_version.json" dans un JSON
+
+    return new_version_file_json
+
 # Recuperer les informations du formulaire dans template/index.html
 @dependencies.route("/submit", methods=["POST"]) # Recuperer les informations
 def submit():
@@ -148,15 +166,13 @@ def submit():
 
     main(project_id, last_version, new_version) # Initialiser le fichier "List_dependencies.json"
 
-    last_version_file = open_file(file_path = "app/data/version/last_version.json") # Ouvrir le fichier "last_version.json"
-    new_version_file = open_file(file_path = "app/data/version/new_version.json")  # Ouvrir le fichier "new_version.json"
-
-    last_version_file_json = json.dumps(last_version_file, indent=4) # Ecrire le contenu du fichier "last_version.json" dans un JSON
-    new_version_file_json = json.dumps(new_version_file, indent=4)  # Ecrire le contenu du fichier "new_version.json" dans un JSON
+    last_version_file_json = finish_last_version() # Trier les fichiers et les envoyer dans un JSON
+    new_version_file_json = finish_new_version()
 
 
     return render_template("submit_result.html", 
                            last_version=last_version, 
                            new_version=new_version, 
                            last_version_file=last_version_file_json, 
-                           new_version_file=new_version_file_json)
+                           new_version_file=new_version_file_json
+                           )

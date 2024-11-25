@@ -24,3 +24,12 @@ def open_file(file_path):
         return data
     except Exception as e:
         print(f"Erreur : {e}, impossible de charger le fichier {file_path}.") # Le fichier n'a pas pu etre ouvert
+
+# Trier la variable "data" par odre alphabétique de la clé "name" sous la clé "key_main"
+def sort_data(data_sort, key_main, key_sorted):
+    try:
+        # Trier la liste des dépendances par la clé "name"
+        data_sort[key_main] = sorted(data_sort[key_main], key=lambda x: x[key_sorted].lower())
+        return data_sort
+    except Exception as e:
+        print(f"Erreur : {e}, impossible de trier la variable {data_sort}.")
