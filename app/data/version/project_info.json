@@ -1,0 +1,1286 @@
+{
+    "last": {
+        "version": "6.2.2",
+        "dependencies": [
+            {
+                "version_id": "Qql6TI9W",
+                "project_id": "4I1XuqiY",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "[EMF] Entity Model Features",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.2.6"
+            },
+            {
+                "version_id": "XjQ2f0CR",
+                "project_id": "BVzZfTc1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "[ETF] Entity Texture Features",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "6.2.7"
+            },
+            {
+                "version_id": "LHBm6fEV",
+                "project_id": "PRN43VSY",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Animatica",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "0.6.1+1.21"
+            },
+            {
+                "version_id": "yyJushgo",
+                "project_id": "kqJFAPU9",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Better Mount HUD",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.2.4"
+            },
+            {
+                "version_id": "6SzVPVR4",
+                "project_id": "89Wsn8GD",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Capes",
+                "loaders": [
+                    "fabric",
+                    "forge"
+                ],
+                "version_number": "1.5.4+1.21"
+            },
+            {
+                "version_id": "seMlJ1KY",
+                "project_id": "tN4E9NfV",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Chat Reporting Helper",
+                "loaders": [
+                    "minecraft"
+                ],
+                "version_number": "4.24"
+            },
+            {
+                "version_id": "JUnP9V1A",
+                "project_id": "otVJckYQ",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "CIT Resewn",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.2.2+1.21"
+            },
+            {
+                "version_id": "HpMb5wGb",
+                "project_id": "9s6osm5g",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Cloth Config API",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge"
+                ],
+                "version_number": "15.0.140+fabric"
+            },
+            {
+                "version_id": "NksUpFjf",
+                "project_id": "1IjD5062",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Continuity",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "3.0.0-beta.5+1.21"
+            },
+            {
+                "version_id": "mYyOLshA",
+                "project_id": "DOUdJVEm",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Controlify",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.0.0-beta.17"
+            },
+            {
+                "version_id": "fbzkv9Iu",
+                "project_id": "ETlrkaYF",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Cubes Without Borders",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.1.1+1.21"
+            },
+            {
+                "version_id": "dO7QNiof",
+                "project_id": "QwxR6Gcd",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Debugify",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "quilt"
+                ],
+                "version_number": "1.21.1+1.0"
+            },
+            {
+                "version_id": "nGAANyOn",
+                "project_id": "LQ3K71Q1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Dynamic FPS",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "3.7.6"
+            },
+            {
+                "version_id": "ul9OslWB",
+                "project_id": "qANg5Jrr",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "e4mc",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "5.2.1-fabric"
+            },
+            {
+                "version_id": "8OuTJDGd",
+                "project_id": "OVuFYfre",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Enhanced Block Entities",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "0.10.1+1.21"
+            },
+            {
+                "version_id": "hD1f5amG",
+                "project_id": "NNAgCjsB",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Entity Culling",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.7.1"
+            },
+            {
+                "version_id": "thGkUOxt",
+                "project_id": "P7dR8mSH",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fabric API",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "0.107.0+1.21.1"
+            },
+            {
+                "version_id": "B0fZidZi",
+                "project_id": "Ha28R6CL",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fabric Language Kotlin",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.12.3+kotlin.2.0.21"
+            },
+            {
+                "version_id": "yhQrKNAJ",
+                "project_id": "YBz7DOs8",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FabricSkyboxes",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-0.7.4"
+            },
+            {
+                "version_id": "A3n8pliV",
+                "project_id": "HpdHOPOp",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FabricSkyBoxes Interop",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-1.4.0"
+            },
+            {
+                "version_id": "HfdXLVRy",
+                "project_id": "3qsfQtE9",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fabrishot",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.14.1"
+            },
+            {
+                "version_id": "cexf0WMO",
+                "project_id": "dspVZXKP",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fast Better Grass",
+                "loaders": [
+                    "minecraft"
+                ],
+                "version_number": "1.21.2"
+            },
+            {
+                "version_id": "dIGKewCo",
+                "project_id": "x1hIzbuY",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FastQuit",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "3.0.0+1.20.6"
+            },
+            {
+                "version_id": "bwKMSBhn",
+                "project_id": "uXXizFIs",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FerriteCore",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "7.0.2-hotfix-fabric"
+            },
+            {
+                "version_id": "1jIYgnG2",
+                "project_id": "5ZwdcRci",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "ImmediatelyFast",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.3.1+1.21.1-fabric"
+            },
+            {
+                "version_id": "Z8VpxxGh",
+                "project_id": "Orvt0mRa",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Indium",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.0.35+mc1.21"
+            },
+            {
+                "version_id": "kuOV4Ece",
+                "project_id": "YL57xq9U",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Iris Shaders",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.7.3+1.21"
+            },
+            {
+                "version_id": "f0UyHyXq",
+                "project_id": "yBW8D80W",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "LambDynamicLights",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "3.1.2+1.21.1"
+            },
+            {
+                "version_id": "ib1MuM1V",
+                "project_id": "uLbm7CG6",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Language Reload",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.7.1+1.21.1"
+            },
+            {
+                "version_id": "9x0igjLz",
+                "project_id": "gvQqBUqZ",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Lithium",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21.1-0.13.1"
+            },
+            {
+                "version_id": "eUN0SbET",
+                "project_id": "qJDfP7WN",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Main Menu Credits",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.2.0"
+            },
+            {
+                "version_id": "LGYOH4RN",
+                "project_id": "sGmHWmeL",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "MixinTrace",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.1.1+1.17"
+            },
+            {
+                "version_id": "YIfqIJ8q",
+                "project_id": "mOgUt4GM",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Mod Menu",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "11.0.3"
+            },
+            {
+                "version_id": null,
+                "project_id": null,
+                "file_name": "Mod Menu Helper.zip",
+                "dependency_type": "embedded",
+                "name": "Mod Menu Helper.zip",
+                "loaders": null,
+                "version_number": null
+            },
+            {
+                "version_id": "FUZo6yCk",
+                "project_id": "QdG47OkI",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Model Gap Fix",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.21-1.6"
+            },
+            {
+                "version_id": "qO3cN8gB",
+                "project_id": "nmDcB62a",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "ModernFix",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge"
+                ],
+                "version_number": "5.19.5+mc1.21.1"
+            },
+            {
+                "version_id": "3siYJiWG",
+                "project_id": "8qkXwOnk",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "More Chat History",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.3.1"
+            },
+            {
+                "version_id": "BUxgeDdf",
+                "project_id": "51shyZVL",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "More Culling",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "0.26.0"
+            },
+            {
+                "version_id": "riMhCAII",
+                "project_id": "qQyHxfxd",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "No Chat Reports",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "Fabric-1.21-v2.8.0"
+            },
+            {
+                "version_id": "rPLGSp71",
+                "project_id": "JuksLGBQ",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "OptiGUI",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "2.3.0-beta.6+1.21"
+            },
+            {
+                "version_id": "fQnpir9a",
+                "project_id": "pJogNFap",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Paginated Advancements & Custom Frames",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "2.5.1"
+            },
+            {
+                "version_id": "H7hyuo44",
+                "project_id": "3qAYkBMB",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Polytone",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge"
+                ],
+                "version_number": "1.21-2.5.5"
+            },
+            {
+                "version_id": "TMFxzCSV",
+                "project_id": "3IuO68q1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Puzzle",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.0.1-fabric"
+            },
+            {
+                "version_id": "6gZ19wc6",
+                "project_id": "Bh37bMuy",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Reese's Sodium Options",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-1.7.3"
+            },
+            {
+                "version_id": "J4n3Uh3Y",
+                "project_id": "ZP7xHXtw",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Remove Reloading Screen",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "5.0.8+mc1.21.1-fabric"
+            },
+            {
+                "version_id": "RncWhTxD",
+                "project_id": "AANobbMI",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Sodium",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-0.5.11"
+            },
+            {
+                "version_id": "uuhVlRGv",
+                "project_id": "PtjYWJkn",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Sodium Extra",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-0.5.7"
+            },
+            {
+                "version_id": "uBJetVKi",
+                "project_id": "yfDziwn1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Translations for Sodium",
+                "loaders": [
+                    "minecraft"
+                ],
+                "version_number": "v4.12.0"
+            },
+            {
+                "version_id": "f9ZVX07g",
+                "project_id": "1eAoo2KR",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "YetAnotherConfigLib (YACL)",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "3.6.1+1.21-fabric"
+            },
+            {
+                "version_id": "KMOzdYko",
+                "project_id": "WwbubTsV",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Your Options Shall Be Respected (YOSBR)",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "0.1.2"
+            },
+            {
+                "version_id": "mGFci27z",
+                "project_id": "w7ThoJFB",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Zoomify",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "2.14.2+1.21.1"
+            }
+        ]
+    },
+    "new": {
+        "version": "6.2.3",
+        "dependencies": [
+            {
+                "version_id": "Qql6TI9W",
+                "project_id": "4I1XuqiY",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "[EMF] Entity Model Features",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.2.6"
+            },
+            {
+                "version_id": "KmnvNiTO",
+                "project_id": "BVzZfTc1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "[ETF] Entity Texture Features",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "6.2.8"
+            },
+            {
+                "version_id": "LHBm6fEV",
+                "project_id": "PRN43VSY",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Animatica",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "0.6.1+1.21"
+            },
+            {
+                "version_id": "yyJushgo",
+                "project_id": "kqJFAPU9",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Better Mount HUD",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.2.4"
+            },
+            {
+                "version_id": "6SzVPVR4",
+                "project_id": "89Wsn8GD",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Capes",
+                "loaders": [
+                    "fabric",
+                    "forge"
+                ],
+                "version_number": "1.5.4+1.21"
+            },
+            {
+                "version_id": "seMlJ1KY",
+                "project_id": "tN4E9NfV",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Chat Reporting Helper",
+                "loaders": [
+                    "minecraft"
+                ],
+                "version_number": "4.24"
+            },
+            {
+                "version_id": "JUnP9V1A",
+                "project_id": "otVJckYQ",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "CIT Resewn",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.2.2+1.21"
+            },
+            {
+                "version_id": "HpMb5wGb",
+                "project_id": "9s6osm5g",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Cloth Config API",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge"
+                ],
+                "version_number": "15.0.140+fabric"
+            },
+            {
+                "version_id": "NksUpFjf",
+                "project_id": "1IjD5062",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Continuity",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "3.0.0-beta.5+1.21"
+            },
+            {
+                "version_id": "2rYmDEEa",
+                "project_id": "DOUdJVEm",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Controlify",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.0.0-beta.21"
+            },
+            {
+                "version_id": "fbzkv9Iu",
+                "project_id": "ETlrkaYF",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Cubes Without Borders",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.1.1+1.21"
+            },
+            {
+                "version_id": "dO7QNiof",
+                "project_id": "QwxR6Gcd",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Debugify",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "quilt"
+                ],
+                "version_number": "1.21.1+1.0"
+            },
+            {
+                "version_id": "nGAANyOn",
+                "project_id": "LQ3K71Q1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Dynamic FPS",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "3.7.6"
+            },
+            {
+                "version_id": "ul9OslWB",
+                "project_id": "qANg5Jrr",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "e4mc",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "5.2.1-fabric"
+            },
+            {
+                "version_id": "8OuTJDGd",
+                "project_id": "OVuFYfre",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Enhanced Block Entities",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "0.10.1+1.21"
+            },
+            {
+                "version_id": "hD1f5amG",
+                "project_id": "NNAgCjsB",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Entity Culling",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.7.1"
+            },
+            {
+                "version_id": "aHuj8q0Q",
+                "project_id": "P7dR8mSH",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fabric API",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "0.109.0+1.21.1"
+            },
+            {
+                "version_id": "B0fZidZi",
+                "project_id": "Ha28R6CL",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fabric Language Kotlin",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.12.3+kotlin.2.0.21"
+            },
+            {
+                "version_id": "yhQrKNAJ",
+                "project_id": "YBz7DOs8",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FabricSkyboxes",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-0.7.4"
+            },
+            {
+                "version_id": "A3n8pliV",
+                "project_id": "HpdHOPOp",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FabricSkyBoxes Interop",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-1.4.0"
+            },
+            {
+                "version_id": "HfdXLVRy",
+                "project_id": "3qsfQtE9",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fabrishot",
+                "loaders": [
+                    "fabric"
+                ],
+                "version_number": "1.14.1"
+            },
+            {
+                "version_id": "cexf0WMO",
+                "project_id": "dspVZXKP",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Fast Better Grass",
+                "loaders": [
+                    "minecraft"
+                ],
+                "version_number": "1.21.2"
+            },
+            {
+                "version_id": "dIGKewCo",
+                "project_id": "x1hIzbuY",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FastQuit",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "3.0.0+1.20.6"
+            },
+            {
+                "version_id": "bwKMSBhn",
+                "project_id": "uXXizFIs",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "FerriteCore",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "7.0.2-hotfix-fabric"
+            },
+            {
+                "version_id": "dYT65RCI",
+                "project_id": "5ZwdcRci",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "ImmediatelyFast",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.3.2+1.21.1-fabric"
+            },
+            {
+                "version_id": "Z8VpxxGh",
+                "project_id": "Orvt0mRa",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Indium",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.0.35+mc1.21"
+            },
+            {
+                "version_id": "kuOV4Ece",
+                "project_id": "YL57xq9U",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Iris Shaders",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.7.3+1.21"
+            },
+            {
+                "version_id": "f0UyHyXq",
+                "project_id": "yBW8D80W",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "LambDynamicLights",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "3.1.2+1.21.1"
+            },
+            {
+                "version_id": "ib1MuM1V",
+                "project_id": "uLbm7CG6",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Language Reload",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.7.1+1.21.1"
+            },
+            {
+                "version_id": "frXUdgvL",
+                "project_id": "gvQqBUqZ",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Lithium",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21.1-0.14.2"
+            },
+            {
+                "version_id": "eUN0SbET",
+                "project_id": "qJDfP7WN",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Main Menu Credits",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.2.0"
+            },
+            {
+                "version_id": "LGYOH4RN",
+                "project_id": "sGmHWmeL",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "MixinTrace",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.1.1+1.17"
+            },
+            {
+                "version_id": "YIfqIJ8q",
+                "project_id": "mOgUt4GM",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Mod Menu",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "11.0.3"
+            },
+            {
+                "version_id": null,
+                "project_id": null,
+                "file_name": "Mod Menu Helper.zip",
+                "dependency_type": "embedded",
+                "name": "Mod Menu Helper.zip",
+                "loaders": null,
+                "version_number": null
+            },
+            {
+                "version_id": "FUZo6yCk",
+                "project_id": "QdG47OkI",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Model Gap Fix",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "1.21-1.6"
+            },
+            {
+                "version_id": "qO3cN8gB",
+                "project_id": "nmDcB62a",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "ModernFix",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge"
+                ],
+                "version_number": "5.19.5+mc1.21.1"
+            },
+            {
+                "version_id": "3siYJiWG",
+                "project_id": "8qkXwOnk",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "More Chat History",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "1.3.1"
+            },
+            {
+                "version_id": "BUxgeDdf",
+                "project_id": "51shyZVL",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "More Culling",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "0.26.0"
+            },
+            {
+                "version_id": "D8K0KJXM",
+                "project_id": "qQyHxfxd",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "No Chat Reports",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "Fabric-1.21.1-v2.9.1"
+            },
+            {
+                "version_id": "rPLGSp71",
+                "project_id": "JuksLGBQ",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "OptiGUI",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "2.3.0-beta.6+1.21"
+            },
+            {
+                "version_id": "fQnpir9a",
+                "project_id": "pJogNFap",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Paginated Advancements & Custom Frames",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "2.5.1"
+            },
+            {
+                "version_id": "OUFfPjZd",
+                "project_id": "3qAYkBMB",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Polytone",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge"
+                ],
+                "version_number": "1.21-2.5.10"
+            },
+            {
+                "version_id": "TMFxzCSV",
+                "project_id": "3IuO68q1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Puzzle",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "2.0.1-fabric"
+            },
+            {
+                "version_id": "6gZ19wc6",
+                "project_id": "Bh37bMuy",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Reese's Sodium Options",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-1.7.3"
+            },
+            {
+                "version_id": "J4n3Uh3Y",
+                "project_id": "ZP7xHXtw",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Remove Reloading Screen",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "5.0.8+mc1.21.1-fabric"
+            },
+            {
+                "version_id": "RncWhTxD",
+                "project_id": "AANobbMI",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Sodium",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-0.5.11"
+            },
+            {
+                "version_id": "uuhVlRGv",
+                "project_id": "PtjYWJkn",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Sodium Extra",
+                "loaders": [
+                    "fabric",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "mc1.21-0.5.7"
+            },
+            {
+                "version_id": "GLPr0Qn9",
+                "project_id": "yfDziwn1",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Translations for Sodium",
+                "loaders": [
+                    "minecraft"
+                ],
+                "version_number": "v4.14.0"
+            },
+            {
+                "version_id": "f9ZVX07g",
+                "project_id": "1eAoo2KR",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "YetAnotherConfigLib (YACL)",
+                "loaders": [
+                    "fabric",
+                    "forge",
+                    "neoforge",
+                    "quilt"
+                ],
+                "version_number": "3.6.1+1.21-fabric"
+            },
+            {
+                "version_id": "KMOzdYko",
+                "project_id": "WwbubTsV",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Your Options Shall Be Respected (YOSBR)",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "0.1.2"
+            },
+            {
+                "version_id": "mGFci27z",
+                "project_id": "w7ThoJFB",
+                "file_name": null,
+                "dependency_type": "embedded",
+                "name": "Zoomify",
+                "loaders": [
+                    "fabric",
+                    "quilt"
+                ],
+                "version_number": "2.14.2+1.21.1"
+            }
+        ]
+    }
+}

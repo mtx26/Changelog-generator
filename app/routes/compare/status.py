@@ -3,15 +3,16 @@ from app.routes.dependencies.__init__ import *
 
 
 # Comparaison des dépendances
-def status():
-    last_dependencies = open_file("app/data/version/last_version.json")
-    new_dependencies = open_file("app/data/version/new_version.json")
+def status(data):
+
+    last_dependencies = data["last"]
+    new_dependencies = data["new"]
 
     # Explication de l'indexation des dépendances par project_id
     # old_indexed = {}
-    # for dep in old_dependencies["dependencies"]:
-        # project_id = dep["project_id"]
-        # old_indexed[project_id] = dep
+    # for dependency in last_dependencies["dependencies"]:
+        # project_id = dependency["project_id"]
+        # last_indexed[project_id] = dependency
 
     last_indexed = {dependency["project_id"]: dependency for dependency in last_dependencies["dependencies"]}
     new_indexed = {dependency["project_id"]: dependency for dependency in new_dependencies["dependencies"]}
