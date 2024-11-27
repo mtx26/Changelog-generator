@@ -25,8 +25,13 @@ elif FLASK_ENV == "production":
 else:
     raise ValueError(f"Environnement Flask invalide : '{FLASK_ENV}'.")
 
+ip = os.getenv("GUNICORN_IP", "127.0.0.1")  # Valeur par défaut si la variable est absente
+port = os.getenv("GUNICORN_PORT", "8000")   # Valeur par défaut si la variable est absente
+
+bind = f"{ip}:{port}"
+
 # Configuration Gunicorn
-bind = "127.0.0.1:4000"
+
 workers = int(os.getenv("WORKERS", "3"))
 threads = int(os.getenv("THREADS", "2"))
 timeout = int(os.getenv("TIMEOUT", "30"))
