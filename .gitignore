@@ -163,10 +163,5 @@ cython_debug/
 
 .env
 
-cert/
 
-changelog_generator
-start_app.sh
-
-app.py
-config.py
+certs/
