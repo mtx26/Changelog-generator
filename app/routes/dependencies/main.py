@@ -142,7 +142,7 @@ def submit():
     last_version_file = json.dumps(data["last"], indent=4)
     new_version_file = json.dumps(data["new"], indent=4)
 
-    status(data)
+    changelog = status(data)
 
 
 
@@ -150,6 +150,7 @@ def submit():
                            last_version=last_version, 
                            new_version=new_version,
                            last_version_file = last_version_file,
-                           new_version_file =  new_version_file
+                           new_version_file =  new_version_file,
+                           changelog = changelog
                            )
 

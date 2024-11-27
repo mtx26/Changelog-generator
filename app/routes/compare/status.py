@@ -2,46 +2,42 @@
 from app.routes.dependencies.__init__ import *
 
 
+
 # Comparaison des dépendances
 def status(data):
 
     last_dependencies = data["last"]
     new_dependencies = data["new"]
 
-    # Explication de l'indexation des dépendances par project_id
-    # old_indexed = {}
-    # for dependency in last_dependencies["dependencies"]:
-        # project_id = dependency["project_id"]
-        # last_indexed[project_id] = dependency
+    last_indexed = {}
+    for dep in last_dependencies["dependencies"]:
+        project_id = dep["project_id"]  # Extraire la clé
+        last_indexed[project_id] = dep  # Ajouter la clé et la valeur
 
-    last_indexed = {dependency["project_id"]: dependency for dependency in last_dependencies["dependencies"]}
-    new_indexed = {dependency["project_id"]: dependency for dependency in new_dependencies["dependencies"]}
+    new_indexed = {}
+    for dep in new_dependencies["dependencies"]:
+        project_id = dep["project_id"]  # Extraire la clé
+        new_indexed[project_id] = dep  # Ajouter la clé et la valeur
+    changelog = ""
 
     # Détection des ajouts, suppressions, et mises à jour
-    added = [
-        {"project_id": project_id, "new_version": new_indexed[project_id]["version_number"]}
-        for project_id in new_indexed if project_id not in last_indexed # or last_indexed[project_id]["version_number"] != new_indexed[project_id]["version_number"]
-    ]
+    for project_id in new_indexed:
+        if project_id not in last_indexed:
+            changelog += "## Added\n"
+            changelog += f"- **{new_indexed[project_id]["name"]}**\n"
 
-    removed = [
-        {"project_id": project_id, "old_version": last_indexed[project_id]["version_number"]}
-        for project_id in last_indexed if project_id not in new_indexed # or last_indexed[project_id]["version_number"] != new_indexed[project_id]["version_number"]
-    ]
+    for project_id in last_indexed:
+        if project_id not in new_indexed:
+            changelog += "## Removed\n"
+            changelog += f"- **{last_indexed[project_id]["name"]}**\n"
+            print(changelog)
 
-    updated = [
-        {
-            "project_id": project_id,
-            "old_version": last_indexed[project_id]["version_number"],
-            "new_version": new_indexed[project_id]["version_number"]
-        }
-        for project_id in last_indexed
-        if project_id in new_indexed and last_indexed[project_id]["version_number"] != new_indexed[project_id]["version_number"]
-    ]
-
-    # Résultat
-    print("Ajouts :")
-    print(added)
-    print("\nSuppressions :")
-    print(removed)
-    print("\nMises à jour :")
-    print(updated)
+    for project_id in last_indexed:
+        if project_id in new_indexed:
+            if last_indexed[project_id]["version_number"] != new_indexed[project_id]["version_number"]:
+                changelog += "## Updated\n"
+                changelog += f"- **{last_indexed[project_id]["name"]}**\n"
+                changelog += f"   - Old Version:  {last_indexed[project_id]['version_number']}\n"
+                changelog += f"   - New Version:  {new_indexed[project_id]['version_number']}\n"
+    print(changelog)
+    return changelog
