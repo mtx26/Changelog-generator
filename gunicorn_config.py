@@ -24,13 +24,13 @@ elif FLASK_ENV == "production":
     SESSION_COOKIE_SECURE = True
 else:
     raise ValueError(f"Environnement Flask invalide : '{FLASK_ENV}'.")
-
+'''
 ip = os.getenv("GUNICORN_IP")  # Valeur par défaut si la variable est absente
 port = os.getenv("GUNICORN_PORT")   # Valeur par défaut si la variable est absente
 
 if ip is not "none" and port is not "none":
     bind = f"{ip}:{port}"
-    
+    '''
 
 # Configuration Gunicorn
 
@@ -42,7 +42,7 @@ loglevel = LOG_LEVEL.lower()  # Utilise le niveau de log configuré.
 # Journaux
 accesslog = "-"  # Journal des requêtes (STDOUT)
 errorlog = "-"   # Journal des erreurs (STDOUT)
-
+"""
 
 # Vérifier si SSL doit être activé
 ssl_enabled = os.getenv("SSL_ENABLED", "False").lower() == "true"
@@ -62,3 +62,4 @@ if ssl_enabled and os.path.exists(certfile) and os.path.exists(keyfile):
 else:
     ssl_options = None
     print("SSL désactivé ou certificat/clé manquants.")
+    """
