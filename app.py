@@ -43,4 +43,5 @@ if __name__ == "__main__":
     debug = app.config.get("DEBUG", False)
     
     # Lancer l'application Flask
+    app.run(host="0.0.0.0", port=port, debug=debug, ssl_context=('server.ort', 'server. key'))
     
