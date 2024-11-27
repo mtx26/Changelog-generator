@@ -53,7 +53,7 @@ def status(data):
     if added_projects:
         changelog += "## Added\n"
         for project_id in added_projects:
-            changelog += f"- **{new_indexed[project_id]['name']}: {new_indexed[project_id]['version_number']}**\n"
+            changelog += f"- **{new_indexed[project_id]['name']}:** {new_indexed[project_id]['version_number']}\n"
 
     if added_projects == []:
         changelog += "## Added\n"
