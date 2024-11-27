@@ -28,8 +28,9 @@ else:
 ip = os.getenv("GUNICORN_IP")  # Valeur par défaut si la variable est absente
 port = os.getenv("GUNICORN_PORT")   # Valeur par défaut si la variable est absente
 
-if ip is not None and port is not None:
+if ip is not "none" and port is not "none":
     bind = f"{ip}:{port}"
+    
 
 # Configuration Gunicorn
 
@@ -42,17 +43,22 @@ loglevel = LOG_LEVEL.lower()  # Utilise le niveau de log configuré.
 accesslog = "-"  # Journal des requêtes (STDOUT)
 errorlog = "-"   # Journal des erreurs (STDOUT)
 
-# SSL (si nécessaire)
-import os
 
+# Vérifier si SSL doit être activé
+ssl_enabled = os.getenv("SSL_ENABLED", "False").lower() == "true"
+
+# Spécifier les chemins des certificats
 certfile = os.path.join(os.path.dirname(__file__), 'certs', 'server.crt')  # Remplace 'server.crt' par ton fichier de certificat
 keyfile = os.path.join(os.path.dirname(__file__), 'certs', 'server.key')  # Remplace 'server.key' par ta clé privée
 
-if os.path.exists(certfile) and os.path.exists(keyfile):
+# Vérifier si les fichiers de certificat existent et si SSL est activé
+if ssl_enabled and os.path.exists(certfile) and os.path.exists(keyfile):
     ssl_options = {
         "certfile": certfile,
         "keyfile": keyfile,
     }
-    # Passer ces options à Gunicorn
+    print("SSL activé avec les certificats.")
+    # Passer ces options à Gunicorn ou à votre serveur
 else:
-    print("Certificat ou clé manquants.")
+    ssl_options = None
+    print("SSL désactivé ou certificat/clé manquants.")
