@@ -55,7 +55,7 @@ def status(data):
         for project_id in added_projects:
             changelog += f"- **{new_indexed[project_id]['name']}:** {new_indexed[project_id]['version_number']}\n"
 
-    if added_projects == []:
+    if added_projects == [] and added_projects_with_null_id:
         changelog += "## Added\n"
     for name in added_projects_with_null_id:
         changelog += f"- **{added_projects_with_null_id[name]['name']}**\n"
@@ -67,7 +67,7 @@ def status(data):
         for project_id in removed_projects:
             changelog += f"- **{last_indexed[project_id]['name']}**\n"
 
-    if removed_projects == []:
+    if removed_projects == []and removed_projects_with_null_id:
         changelog += "## Removed\n"        
     for name in removed_projects_with_null_id:
         changelog += f"- **{removed_projects_with_null_id[name]['name']}**\n"
