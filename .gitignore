@@ -166,3 +166,5 @@ cython_debug/
 server.crt
 server.key
 
+changelog_generator
+start_app.sh

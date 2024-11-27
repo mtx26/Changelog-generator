@@ -1,5 +1,8 @@
 import requests
 import json
+import asyncio
+from asyncio import Semaphore
+import httpx
 from flask import Flask, request, render_template, Blueprint
 
 from app.routes.dependencies.__init__ import *
@@ -14,55 +17,73 @@ def index():
     return render_template("index.html") # Afficher la page "index.html"
 
 
-def add_name_version_number_to_dependencies(data):
-    
+async def fetch_with_retry(client, url, retries=3, delay=1):
+    """Effectue une requête avec des tentatives en cas de réponse 429."""
+    from app.routes.dependencies.config import headers
+    for attempt in range(retries):
+        try:
+            response = await client.get(url, headers=headers)
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 429 and attempt < retries - 1:
+                print(f"Limite atteinte, nouvelle tentative dans {delay} seconde(s)...")
+                await asyncio.sleep(delay)
+                delay *= 2  # Augmente progressivement le délai
+            else:
+                raise
+
+from asyncio import Semaphore
+
+async def add_name_version_number_to_dependencies(data):
+    semaphore = Semaphore(100)  # Limite à 50 requêtes simultanées
     project_cache = {}
     version_cache = {}
-    
-    def get_name_from_project_id(project_id):
-        if project_id in project_cache:
-            return project_cache[project_id]  # Retourner le 'title' du cache si disponible
-        else:
-            # Effectuer l'appel API si le 'title' n'est pas dans le cache
-            project_info = get_project_info(project_id)
-            title = project_info.get("title", "Nom non trouvé")  # Extraire 'title' comme 'name'
-            loaders = project_info.get("loaders", "Aucun loaders")
-            project_cache[project_id] = (title, loaders)  # Mettre à jour le cache
-            return title, loaders
-        
-    def get_version_number(version_id):
-        if version_id in version_cache:
-            return version_cache[version_id]  # Retourner le 'version_number' du cache si disponible
-        else:
-            # Effectuer l'appel API si le 'version_number' n'est pas dans le cache
-            version_info = get_depenencies_versions(version_id)
-            version_number = version_info.get("version_number", "Numéro de version non trouvé")  # Extraire 'version_number' comme 'version_number'
-            version_cache[version_id] = version_number  # Mettre à jour le cache
-            return version_number
 
-    # Vérifier que 'data' est un dictionnaire
-    for version_key in ['last', 'new']:
-        version_data = data[version_key]
-        dependencies = version_data["dependencies"]
+    async def fetch_dependency_info(client, dependency):
+        async with semaphore:
 
-        # Ajouter le 'name' basé sur 'title' à chaque dépendance uniquement si 'project_id' est présent
-        for dependency in dependencies:
             project_id = dependency.get("project_id")
             version_id = dependency.get("version_id")
 
-            if project_id is not None:  # Si 'project_id' est présent, on récupère le 'title' (name)
-                name, loaders = get_name_from_project_id(project_id)  # Récupérer le 'name' basé sur 'title'
-                version_number = get_version_number(version_id)
+            if project_id is not None:
+                if project_id in project_cache:
+                    name, loaders = project_cache[project_id]
+                else:
+                    project_url = f"https://api.modrinth.com/v2/project/{project_id}"
+                    project_info = await fetch_with_retry(client, project_url)
+                    name = project_info.get("title", "Nom non trouvé")
+                    loaders = project_info.get("loaders", "Aucun loaders")
+                    project_cache[project_id] = (name, loaders)
 
-                dependency["name"] = name  # Ajouter le 'name' à la dépendance
+                if version_id in version_cache:
+                    version_number = version_cache[version_id]
+                else:
+                    version_url = f"https://api.modrinth.com/v2/version/{version_id}"
+                    version_info = await fetch_with_retry(client, version_url)
+                    version_number = version_info.get("version_number", "Numéro de version non trouvé")
+                    version_cache[version_id] = version_number
+
+                dependency["name"] = name
                 dependency["loaders"] = loaders
                 dependency["version_number"] = version_number
             else:
-                # Si pas de 'project_id', tu peux gérer à ta manière
                 file_name = dependency["file_name"]
-                dependency["name"] = file_name[:-4] if file_name.endswith(".jar") else file_name # Retirer le .jar du "file_name"
+                dependency["name"] = file_name[:-4] if file_name.endswith(".jar") else file_name
                 dependency["loaders"] = None
                 dependency["version_number"] = None
+
+    async with httpx.AsyncClient() as client:
+        tasks = []
+        for version_key in ['last', 'new']:
+            version_data = data[version_key]
+            dependencies = version_data["dependencies"]
+
+            for dependency in dependencies:
+                tasks.append(fetch_dependency_info(client, dependency))
+
+        await asyncio.gather(*tasks)
+
 
     return data
 
@@ -133,7 +154,7 @@ def submit():
 
     versions_dependencies = extract_dependencies_for_two_versions(API_project_versions, last_version, new_version)
    
-    data = add_name_version_number_to_dependencies(versions_dependencies)
+    data = asyncio.run(add_name_version_number_to_dependencies(versions_dependencies))
 
     data = sort_data_json(data)
 

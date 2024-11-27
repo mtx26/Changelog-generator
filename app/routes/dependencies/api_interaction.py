@@ -1,4 +1,4 @@
-import requests
+import requests, asyncio
 
 # Fonction pour obtenir les versions du modpack
 def get_project_versions(project_id):
