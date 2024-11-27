@@ -25,10 +25,6 @@ elif FLASK_ENV == "production":
 else:
     raise ValueError(f"Environnement Flask invalide : '{FLASK_ENV}'.")
 
-ip = os.getenv("GUNICORN_IP", "127.0.0.1")  # Valeur par défaut si la variable est absente
-port = os.getenv("GUNICORN_PORT", "8000")   # Valeur par défaut si la variable est absente
-
-bind = f"{ip}:{port}"
 
 # Configuration Gunicorn
 
@@ -40,18 +36,3 @@ loglevel = LOG_LEVEL.lower()  # Utilise le niveau de log configuré.
 # Journaux
 accesslog = "-"  # Journal des requêtes (STDOUT)
 errorlog = "-"   # Journal des erreurs (STDOUT)
-
-# SSL (si nécessaire)
-import os
-
-certfile = os.path.join(os.path.dirname(__file__), 'certs', 'server.crt')  # Remplace 'server.crt' par ton fichier de certificat
-keyfile = os.path.join(os.path.dirname(__file__), 'certs', 'server.key')  # Remplace 'server.key' par ta clé privée
-
-if os.path.exists(certfile) and os.path.exists(keyfile):
-    ssl_options = {
-        "certfile": certfile,
-        "keyfile": keyfile,
-    }
-    # Passer ces options à Gunicorn
-else:
-    print("Certificat ou clé manquants.")
