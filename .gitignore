@@ -168,6 +168,5 @@ cert/
 changelog_generator
 start_app.sh
 
-
 app.py
 config.py
