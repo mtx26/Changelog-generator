@@ -1,5 +1,5 @@
 import os
-from app import create_app  # Importer la fonction pour créer l'application Flask
+from app.__init__ import create_app  # Importer la fonction pour créer l'application Flask
 from config import AppConfig  # Importer la configuration de l'application
 import logging
 
