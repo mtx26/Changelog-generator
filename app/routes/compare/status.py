@@ -60,7 +60,7 @@ def status(data):
     for name in added_projects_with_null_id:
         changelog += f"- **{added_projects_with_null_id[name]['name']}**\n"
 
-    # Ajouter les projets "Removed"Zx²x
+    # Ajouter les projets "Removed"
     removed_projects = [project_id for project_id in last_indexed if project_id not in new_indexed]
     if removed_projects:
         changelog += "## Removed\n"
