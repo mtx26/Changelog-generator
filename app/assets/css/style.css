@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Setting a clean, sans-serif font */
+    background-color: #f4f4f4; /* Light gray background for contrast */
+    color: #333; /* Dark gray text for readability */
+    padding: 20px; /* Adding some padding around the body */
+}
+
+h1 {
+    text-align: center; /* Centering the heading */
+    margin-bottom: 20px; /* Adding some space below the heading */
+}
+
+.container {
+    max-width: 500px; /* Maximum width for the container */
+    margin: 50px auto; /* Centering the container */
+    padding: 20px; /* Adding padding */
+    background-color: #fff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.withe_box {
+    background-color: white; /* White background for the form */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding within the form */
+    max-width: 450px; /* Maximum width of the form */
+    margin: 0 auto; /* Centering the form horizontally */
+}
+
+label {
+    display: block; /* Each label takes full width */
+    margin-bottom: 5px; /* Space below each label */
+}
+
+input[type="text"] {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding within the input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below each input */
+    font-size: 16px; /* Comfortable font size */
+}
+
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text color */
+    border: none; /* Removing default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding inside the button */
+    font-size: 14px; /* Comfortable font size */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color and scale */
+    margin-top: 10px; /* Space above button */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.dropdown {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding within the input */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below each input */
+    font-size: 16px; /* Comfortable font size */
+}

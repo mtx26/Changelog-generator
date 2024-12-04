@@ -2,6 +2,7 @@
 
     $API_project_versions = null;
     $versions_list = null;
+    $id = null;
 
     // Vérifier si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,6 +20,7 @@
             // echo json_encode($API_project_versions_json);
             // decoder la réponse JSON
             if ($API_project_versions_json !== null) {
+
                 $API_project_versions_table = json_decode($API_project_versions_json, true);
                 $versions_list = get_list_versions($API_project_versions_table);
                 $versions_list_json = json_encode($versions_list);
@@ -120,33 +122,39 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <title>Changelog Generator</title>
     </head>
     <body>
-        <h1>Changelog Generator</h1>
-        <form action="" method="post">
-            <div class="container" id="form-container">
-                <label for="id">Project ID:</label>
-                <input type="text" id="id" name="id" value="<?php echo $id; ?>">
-                <button type="submit" >Charger les versions</button>
-            </div>
-        </form>
         <div class="container">
-            <div class="dropdown">
-                <h2>Anciennes versions :</h2>
-                <select id="version-dropdown1">
-                    <option value="" disabled selected>Anciennes versions</option>
-                </select>
+            <h1>Changelog Generator</h1>
+            <form action="" method="post">
+                <div class="withe_box"id="form-container">
+                    <label for="id">Project ID:</label>
+                    <input type="text" id="id" name="id" value="<?php echo $id; ?>">
+                    <button type="submit" >Charger les versions</button>
+                </div>
+            </form>
+            <br>
+            <div class="withe_box">
+                <div>
+                    <label>Anciennes versions :</label>
+                    <select class="dropdown" id="version-dropdown1">
+                        <option value="" disabled selected>Anciennes versions</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label>Nouvelles versions :</label>
+                    <select class="dropdown" id="version-dropdown2">
+                        <option value="" disabled selected>Nouvelles versions</option>
+                    </select>
+                </div>
+                <button type="button" onclick="getVersion()">Generate Changelog</button>
             </div>
-            <div class="dropdown">
-                <h2>Nouvelles versions :</h2>
-                <select id="version-dropdown2">
-                    <option value="" disabled selected>Nouvelles versions</option>
-                </select>
-            </div>
+
+        
         </div>
-        <button type="button" onclick="getVersion()">Generate Changelog</button>
     </body>
     <script>
         const data = <?php echo $versions_list_json; ?>;
@@ -193,6 +201,15 @@
         // Remplir les dropdowns avec les données reçues
         fillDropdown(document.getElementById('version-dropdown1'), data);
         fillDropdown(document.getElementById('version-dropdown2'), data);
+
+        function getVersion() {
+            const project_id = document.getElementById('id').value;
+            const version1 = document.getElementById('version-dropdown1').value;
+            const version2 = document.getElementById('version-dropdown2').value;
+            // Effectuer des actions avec les versions choisies
+            const url =`submit_result.php?id=${project_id}&v1=${version1}&v2=${version2}`;
+            window.location.assign(url);
+        }
 
     </script>
 </html>
