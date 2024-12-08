@@ -207,7 +207,7 @@
             const version1 = document.getElementById('version-dropdown1').value;
             const version2 = document.getElementById('version-dropdown2').value;
             // Effectuer des actions avec les versions choisies
-            const url =`submit_result.php?id=${project_id}&v1=${version1}&v2=${version2}`;
+            const url =`submit_result.php?id=${encodeURIComponent(project_id)}&v1=${encodeURIComponent(version1)}&v2=${encodeURIComponent(version2)}`;
             window.location.assign(url);
         }
 

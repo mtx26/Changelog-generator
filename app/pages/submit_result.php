@@ -1,4 +1,12 @@
 <?php
+
+    use GuzzleHttp\Client;
+    use GuzzleHttp\Pool;
+    use GuzzleHttp\Psr7\Request;
+
+    require '..\..\app\vendor\autoload.php';
+
+
     $project_id = $_GET['id'] ?? 'inconnu';
     $last_version = $_GET['v1'] ?? 'inconnu';
     $new_version = $_GET['v2'] ?? 'inconnu';
@@ -12,10 +20,12 @@
 
         $versions_dependencies = extract_dependencies_for_two_versions($API_project_versions, $last_version, $new_version);
         echo "<pre>";
-        print_r($API_project_versions);
         print_r($versions_dependencies);
         echo "</pre>";
-        //add_info($versions_dependencies);       
+        $result = getName($versions_dependencies);
+        echo "<pre>";
+        print_r($result); // Contenu du fichier JSON (les noms des projets)
+        echo "</pre>";
 
     }
 
@@ -72,6 +82,7 @@
             $modpack_version = $project_version['version_number'];
 
             if ($modpack_version == $last_version) {
+
                 if (isset($project_version['dependencies'])) {
                     $list_dependencies = $project_version['dependencies'];
                 } else {
@@ -94,6 +105,66 @@
         return $versions_dependencies;
     
     }
+
+    function getName($versions_dependencies) {
+
+    
+        function fetchAndUpdateDependencies(&$versions_dependencies, $concurrency = 50) {
+            $client = new Client([
+                'verify' => false, // Désactive la vérification SSL
+            ]);
+
+            // Générateur de requêtes avec métadonnées pour identifier chaque dépendance
+            function requests($versions_dependencies) {
+                foreach ($versions_dependencies as $versionKey => $versionData) {
+                    foreach ($versionData['dependencies'] as $depKey => $dependency) {
+                        $project_id = $dependency['project_id'];
+                        $url = 'https://api.modrinth.com/v2/project/' . $project_id;
+    
+                        // Retourne la requête et ses métadonnées
+                        yield [
+                            'request' => new Request('GET', $url),
+                            'meta' => ['versionKey' => $versionKey, 'depKey' => $depKey]
+                        ];
+                    }
+                }
+            }
+    
+            // Créer un tableau pour mapper les requêtes aux dépendances
+            $metaDataMap = [];
+            $requests = [];
+            foreach (requests($versions_dependencies) as $index => $item) {
+                $requests[$index] = $item['request'];
+                $metaDataMap[$index] = $item['meta'];
+            }
+    
+            // Pool pour gérer les requêtes avec un maximum de $concurrency simultanées
+            $pool = new Pool($client, $requests, [
+                'concurrency' => $concurrency,
+                'fulfilled' => function ($response, $index) use (&$versions_dependencies, $metaDataMap) {
+                    $meta = $metaDataMap[$index]; // Récupère les métadonnées pour cette requête
+                    $data = json_decode($response->getBody(), true);
+    
+                    // Met à jour le champ "name" dans $versions_dependencies
+                    $versions_dependencies[$meta['versionKey']]['dependencies'][$meta['depKey']]['name'] = $data['title'] ?? 'Nom introuvable';
+                },
+                'rejected' => function ($reason, $index) {
+                    // Gestion des erreurs
+                    echo "Erreur pour la requête $index : " . $reason->getMessage() . "\n";
+                },
+            ]);
+    
+            // Exécuter les requêtes
+            $pool->promise()->wait();
+        }
+    
+        // Lancer la récupération des informations et mise à jour de $versions_dependencies
+        fetchAndUpdateDependencies($versions_dependencies);
+    
+        // Retourne la structure mise à jour
+        return $versions_dependencies;
+    }
+
 ?>
 
 <!DOCTYPE html>
