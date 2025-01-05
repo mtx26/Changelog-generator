@@ -1,5 +1,4 @@
 <?php
-    // Chargement des dépendances nécessaires
     require_once '../vendor/autoload.php';
     use GuzzleHttp\Client;
     use GuzzleHttp\Pool;
@@ -10,10 +9,8 @@
     use GuzzleHttp\Promise\PromiseInterface;
     use GuzzleHttp\Promise;
 
-    // Définit le type de contenu de la réponse
     header('Content-Type: text/html; charset=utf-8');
 
-    // Récupère les paramètres de requête ou utilise des valeurs par défaut
     $project_id = $_GET['id'] ?? 'inconnu';
     $last_version = $_GET['v1'] ?? 'inconnu';
     $new_version = $_GET['v2'] ?? 'inconnu';
@@ -28,7 +25,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="container bg-white mt-4 rounded shadow pb-3">
         <h1 class="text-center fw-bold mb-4">Soumission réussie</h1>
         <div class="progress" role="progressbar" aria-label="Danger striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
             <div class="progress-bar progress-bar-striped" id="progress" style="width: 0%"></div>
@@ -52,7 +49,7 @@
                         <button id="button_last_version_file" class="btn btn-primary" onclick="copyText('last_version_file', 'button_last_version_file')">Copier le code</button>
                     </div>
                     <div class="card-body">
-                        <pre id="last_version_file"></pre>
+                        <pre id="last_version_file" style="max-height: 300px; overflow-y: auto;"></pre>
                     </div>
                 </div>
             </div>
@@ -63,7 +60,7 @@
                         <button id="button_new_version_file" class="btn btn-primary" onclick="copyText('new_version_file', 'button_new_version_file')">Copier le code</button>
                     </div>
                     <div class="card-body">
-                        <pre id="new_version_file"></pre>
+                        <pre id="new_version_file" style="max-height: 300px; overflow-y: auto;"></pre>
                     </div>
                 </div>
             </div>
@@ -74,34 +71,33 @@
 </body>
 </html>
 <?php
-    // Vérifie si les paramètres requis sont présents
     if (isset($_GET['id']) && isset($_GET['v1']) && isset($_GET['v2'])) {
-        // Récupère les versions du projet via l'API
         $API_project_versions = get_project_versions($project_id);
         if ($API_project_versions === false) {
             die("Erreur lors de la récupération des versions du projet");
         }
 
-        // Récupère les dépendances des versions
         $versions_dependencies = getVersions(json_decode($API_project_versions, true), $last_version, $new_version);
         $result = getName($versions_dependencies);
         $changelog = generateChangelog($result);
 
-        // Prépare les données JSON pour les versions
-        $last_version_json = json_encode($versions_dependencies['last'], JSON_PRETTY_PRINT);
-        $new_version_json = json_encode($versions_dependencies['new'], JSON_PRETTY_PRINT);
+        // Préparer les données JSON
+        $last_version_json = json_encode($result['last'], JSON_PRETTY_PRINT);
+        $new_version_json = json_encode($result['new'], JSON_PRETTY_PRINT);
 
-        // Met à jour le contenu de la page avec les données JSON
-        echo "<script>\n            document.getElementById('changelog').textContent = " . json_encode($changelog) . ";\n            document.getElementById('last_version_file').textContent = " . json_encode($last_version_json) . ";\n            document.getElementById('new_version_file').textContent = " . json_encode($new_version_json) . ";\n        </script>";
+        // Mettre à jour le contenu avec JavaScript
+        echo "<script>
+            document.getElementById('changelog').textContent = " . json_encode($changelog) . ";
+            document.getElementById('last_version_file').textContent = " . json_encode($last_version_json) . ";
+            document.getElementById('new_version_file').textContent = " . json_encode($new_version_json) . ";
+        </script>";
     }
 
-    // Fonction pour récupérer les versions du projet
-    function get_project_versions($project_id) {
-        // Définit l'URL de l'API pour récupérer les versions du projet
+    function get_project_versions($project_id){
+
         $apiUrl = "https://api.modrinth.com/v2/project/$project_id/version";
         $ch = curl_init($apiUrl);
-
-        // Configure les options de cURL
+        
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "Authorization: Bearer ton_token",
@@ -110,32 +106,35 @@
         ]);
         curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . '/../cacert.pem');
 
-        // Exécute la requête cURL
+        
         $response = curl_exec($ch);
-
-        // Vérifie les erreurs de cURL
+        
         if (curl_errno($ch)) {
-            echo "Erreur : ".curl_errno($ch);
+            $message = "Erreur : ".curl_errno($ch);
+            echo $message;
             curl_close($ch);
             return NULL;
+        } else {
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            if ($httpCode !== 200) {
+                $message = "Erreur html: ".$httpCode;
+                echo $message;
+                curl_close($ch);
+                return NULL;
+            } else {
+                curl_close($ch);
+                return $response;
+            }
         }
 
-        // Vérifie le code de réponse HTTP
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        if ($httpCode !== 200) {
-            echo "Erreur html: ".$httpCode;
-            curl_close($ch);
-            return NULL;
-        }
-
-        // Ferme la session cURL et retourne la réponse
-        curl_close($ch);
-        return $response;
     }
 
-    // Fonction pour récupérer les dépendances des versions
     function getVersions($API_project_versions, $last_version, $new_version) {
-        // Initialise les dépendances pour les versions
+        // Ajout de logs pour le débogage
+        error_log('Versions récupérées : ' . implode(', ', array_keys($API_project_versions)));
+        error_log('Last version : ' . $last_version);
+        error_log('New version : ' . $new_version);
+
         $versions_dependencies = [
             'last' => [
                 'version' => $last_version,
@@ -146,30 +145,40 @@
                 'dependencies' => []
             ]
         ];
-
-        // Récupère les versions du projet
-        foreach ($API_project_versions as $project_version) {
+        // Récupérer les versions du projet
+        foreach ($API_project_versions as $project_version){
             $modpack_version = $project_version['version_number'];
+            error_log('Vérification de la version modpack : ' . $modpack_version);
+            if ($modpack_version == $last_version) {
 
-            // Vérifie si la version correspond à la dernière ou à la nouvelle
-            if ($modpack_version == $last_version || $modpack_version == $new_version) {
-                $list_dependencies = $project_version['dependencies'] ?? [];
-                $key = $modpack_version == $last_version ? 'last' : 'new';
-                $versions_dependencies[$key]['dependencies'] = array_merge($versions_dependencies[$key]['dependencies'], $list_dependencies);
+                if (isset($project_version['dependencies'])) {
+                    $list_dependencies = $project_version['dependencies'];
+                    error_log('Dépendances trouvées pour la dernière version : ' . print_r($list_dependencies, true));
+                } else {
+                    $list_dependencies = [];
+                }
+                $versions_dependencies["last"]["dependencies"] = array_merge($versions_dependencies["last"]["dependencies"], $list_dependencies);
+            } elseif ($modpack_version == $new_version) {
+                if (isset($project_version['dependencies'])) {
+                    $list_dependencies = $project_version['dependencies'];
+                    error_log('Dépendances trouvées pour la nouvelle version : ' . print_r($list_dependencies, true));
+                } else {
+                    $list_dependencies = [];
+                }
+                $versions_dependencies["new"]["dependencies"] = array_merge($versions_dependencies["new"]["dependencies"], $list_dependencies);
             }
         }
-
-        // Vérifie si des dépendances ont été trouvées
         if (empty($versions_dependencies['last']['dependencies']) || empty($versions_dependencies['new']['dependencies'])) {
             echo "Erreur : Pas de dépendance trouvée";
             return null;
         }
         return $versions_dependencies;
+    
     }
 
-    // Fonction pour récupérer et mettre à jour les dépendances
     function getName($versions_dependencies) {
-        // Fonction pour récupérer et mettre à jour les dépendances
+
+    
         function fetchAndUpdateDependencies(&$versions_dependencies, $concurrency = 2) {
             $client = new Client([
                 'verify' => false, // Désactive la vérification SSL
@@ -185,54 +194,73 @@
                             yield [
                                 'request' => new Request('GET', 'https://api.modrinth.com/v2/project/' . $project_id),
                                 'meta' => [
-                                    'versionKey' => $versionKey,
+                                    'versionKey' => $versionKey, 
                                     'depKey' => $depKey,
                                     'type' => 'project'
                                 ]
                             ];
+                            
                             // Requête pour la version (version_number)
                             yield [
                                 'request' => new Request('GET', 'https://api.modrinth.com/v2/version/' . $dependency['version_id']),
                                 'meta' => [
-                                    'versionKey' => $versionKey,
+                                    'versionKey' => $versionKey, 
                                     'depKey' => $depKey,
                                     'type' => 'version'
                                 ]
                             ];
-                        } else {
-                            // Met à jour directement le nom dans versions_dependencies
+                        }
+                        else {
                             $filename = str_replace('.jar', '', $dependency['file_name']);
+                            // Met à jour directement le nom dans versions_dependencies
                             $versions_dependencies[$versionKey]['dependencies'][$depKey]['name'] = $filename;
                         }
                     }
                 }
+                
             }
+
+            $requests = [];
+            $metaDataMap = [];
+
+            foreach (requests($versions_dependencies) as $index => $item) {
+                $requests[$index] = $item['request'];
+                $metaDataMap[$index] = $item['meta'];
+            }
+
+            $totalRequests = count($requests);
+            $completedRequests = 0;
+
 
             // Pool pour gérer les requêtes avec un maximum de $concurrency simultanées
             $pool = new Pool($client, $requests, [
-                'concurrency' => $concurrency,
+                'concurrency' => 5, // 5 requêtes simultanées
                 'fulfilled' => function ($response, $index) use (&$versions_dependencies, $metaDataMap, &$completedRequests, $totalRequests) {
-                    // Traite la réponse réussie
                     $meta = $metaDataMap[$index];
                     $data = json_decode($response->getBody(), true);
 
-                    // Met à jour les dépendances selon le type
                     if ($meta['type'] === 'project') {
+                        if (!isset($data['title'])) {
+                            echo "<div style='color: red; margin: 5px 0;'>❌ Erreur: Pas de titre pour le projet " . $meta['depKey'] . "</div>";
+                        }
                         $versions_dependencies[$meta['versionKey']]['dependencies'][$meta['depKey']]['name'] = $data['title'] ?? 'Nom introuvable';
                     } else if ($meta['type'] === 'version') {
+                        if (!isset($data['version_number'])) {
+                            echo "<div style='color: red; margin: 5px 0;'>❌ Erreur: Pas de version_number pour " . $meta['depKey'] . "</div>";
+                        }
                         $versions_dependencies[$meta['versionKey']]['dependencies'][$meta['depKey']]['version_number'] = $data['version_number'] ?? '';
                     }
 
-                    // Met à jour la barre de progression
                     $completedRequests++;
                     $percentage = round(($completedRequests / $totalRequests) * 100);
-                    echo "<script>\n                        document.getElementById('progress').style.width = '$percentage%';\n                        document.getElementById('progress').textContent = '$percentage%';\n                    </script>";
+                    echo "<script>
+                        document.getElementById('progress').style.width = '$percentage%';
+                        document.getElementById('progress').textContent = '$percentage%';
+                    </script>";
                     flush();
                 },
-                'rejected' => function ($reason, $index) use (&$completedRequests, $totalRequests, $metaDataMap, $client, $requests, &$versions_dependencies) {
-                    // Gère les erreurs de requêtes
+       'rejected' => function ($reason, $index) use (&$completedRequests, $totalRequests, $metaDataMap, $client, $requests, &$versions_dependencies) {
                     if ($reason instanceof \GuzzleHttp\Exception\ClientException && $reason->getResponse()->getStatusCode() === 429) {
-                        // Gère le cas de limite de requêtes
                         $response = json_decode($reason->getResponse()->getBody(), true);
                         if (isset($response['description'])) {
                             echo "<div style='color: orange; margin: 5px 0;'>⚠️ Rate limit - Attente: " . $response['description'] . "</div>";
@@ -246,8 +274,14 @@
                                     $meta = $metaDataMap[$index];
                                     $data = json_decode($response->getBody(), true);
                                     if ($meta['type'] === 'project') {
+                                        if (!isset($data['title'])) {
+                                            echo "<div style='color: red; margin: 5px 0;'>❌ Erreur: Pas de titre pour le projet " . $meta['depKey'] . "</div>";
+                                        }
                                         $versions_dependencies[$meta['versionKey']]['dependencies'][$meta['depKey']]['name'] = $data['title'] ?? 'Nom introuvable';
                                     } else if ($meta['type'] === 'version') {
+                                        if (!isset($data['version_number'])) {
+                                            echo "<div style='color: red; margin: 5px 0;'>❌ Erreur: Pas de version_number pour " . $meta['depKey'] . "</div>";
+                                        }
                                         $versions_dependencies[$meta['versionKey']]['dependencies'][$meta['depKey']]['version_number'] = $data['version_number'] ?? '';
                                     }
                                     return;
@@ -257,57 +291,82 @@
                             }
                         }
                     } else {
-                        // Afficher l'erreur originale si ce n'est pas une erreur 429
+                                // Afficher l'erreur originale si ce n'est pas une erreur 429
                         echo "<div style='color: red; margin: 5px 0;'>❌ Erreur: " . $reason->getMessage() . " pour " . $metaDataMap[$index]['depKey'] . "</div>";
                     }
+                    
                     // Si ce n'est pas une erreur 429 ou si le retry a échoué
                     $completedRequests++;
-                    echo "<script>\n                        document.getElementById('progress').style.width = '100%';\n                        document.getElementById('progress').textContent = '100%';\n                    </script>";
+                    echo "<script>
+                        document.getElementById('progress').style.width = '100%';
+                        document.getElementById('progress').textContent = '100%';
+                    </script>";
                     flush();
                 },
             ]);
-
-            // Exécute les requêtes
-            $pool->promise()->wait();
+    
+            // Exécuter les requêtes
+ $pool->promise()->wait();
         }
-
+    
+        // Lancer la récupération des informations et mise à jour de $versions_dependencies
+        fetchAndUpdateDependencies($versions_dependencies, 5);
+    
         // Retourne la structure mise à jour
         return $versions_dependencies;
     }
 
-    // Fonction pour générer le changelog
+
     function generateChangelog($data) {
         $lastDependencies = $data['last'];
         $newDependencies = $data['new'];
-
-        // Indexe les dépendances par projet
+    
         $lastIndexed = [];
         $newIndexed = [];
         $removedProjectsWithNullId = [];
         $addedProjectsWithNullId = [];
-
+    
         foreach ($lastDependencies['dependencies'] as $dep) {
             $projectId = $dep['project_id'];
             if ($projectId === null) {
-                $removedProjectsWithNullId[$dep['name']] = $dep;
+                $name = $dep['name'];
+                $removedProjectsWithNullId[$name] = $dep;
             } else {
-                $lastIndexed[$projectId] = $dep;
+     $lastIndexed[$projectId] = $dep;
             }
         }
-
+    
         foreach ($newDependencies['dependencies'] as $dep) {
             $projectId = $dep['project_id'];
             if ($projectId === null) {
-                $addedProjectsWithNullId[$dep['name']] = $dep;
+                $name = $dep['name'];
+                $addedProjectsWithNullId[$name] = $dep;
             } else {
                 $newIndexed[$projectId] = $dep;
             }
         }
-
-        // Génère le changelog en fonction des dépendances ajoutées, supprimées et mises à jour
+    
+        $toRemoveFromRemoved = [];
+        $toRemoveFromAdded = [];
+    
+        foreach ($removedProjectsWithNullId as $name => $dep) {
+            if (isset($addedProjectsWithNullId[$name])) {
+                $toRemoveFromRemoved[] = $name;
+                $toRemoveFromAdded[] = $name;
+       }
+        }
+    
+        foreach ($toRemoveFromRemoved as $name) {
+            unset($removedProjectsWithNullId[$name]);
+        }
+    
+        foreach ($toRemoveFromAdded as $name) {
+            unset($addedProjectsWithNullId[$name]);
+        }
+    
         $changelog = "";
-
-        // Ajoute les projets ajoutés au changelog
+    
+        // Added projects
         $addedProjects = array_diff(array_keys($newIndexed), array_keys($lastIndexed));
         if (!empty($addedProjects)) {
             $changelog .= "## Added\n";
@@ -315,8 +374,15 @@
                 $changelog .= "- **" . $newIndexed[$projectId]['name'] . ":** " . $newIndexed[$projectId]['version_number'] . "\n";
             }
         }
-
-        // Ajoute les projets supprimés au changelog
+    
+        if (empty($addedProjects) && !empty($addedProjectsWithNullId)) {
+            $changelog .= "## Added\n";
+            foreach ($addedProjectsWithNullId as $name => $dep) {
+                $changelog .= "- **$name**\n";
+            }
+        }
+    
+        // Removed projects
         $removedProjects = array_diff(array_keys($lastIndexed), array_keys($newIndexed));
         if (!empty($removedProjects)) {
             $changelog .= "## Removed\n";
@@ -324,11 +390,19 @@
                 $changelog .= "- **" . $lastIndexed[$projectId]['name'] . "**\n";
             }
         }
-
-        // Ajoute les projets mis à jour au changelog
+    
+        if (empty($removedProjects) && !empty($removedProjectsWithNullId)) {
+            $changelog .= "## Removed\n";
+            foreach ($removedProjectsWithNullId as $name => $dep) {
+                $changelog .= "- **$name**\n";
+                 }
+        }
+    
+        // Updated projects
         $updatedProjects = array_filter(array_keys($lastIndexed), function ($projectId) use ($lastIndexed, $newIndexed) {
             return isset($newIndexed[$projectId]) && $lastIndexed[$projectId]['version_number'] !== $newIndexed[$projectId]['version_number'];
         });
+    
         if (!empty($updatedProjects)) {
             $changelog .= "## Updated\n";
             foreach ($updatedProjects as $projectId) {
@@ -337,11 +411,11 @@
                 $changelog .= "   - New Version: " . $newIndexed[$projectId]['version_number'] . "\n";
             }
         }
-
+    
         return $changelog;
     }
 
-    // Fonction pour générer le contenu du fichier de version
+
     function generateVersionFile($indexedData) {
         $output = "";
         foreach ($indexedData as $projectId => $data) {

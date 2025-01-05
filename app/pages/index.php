@@ -118,44 +118,49 @@
 
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../assets/css/style.css">
         <title>Changelog Generator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
     <body>
-        <div class="container">
-            <h1>Changelog Generator</h1>
-            <form action="" method="post">
-                <div class="withe_box"id="form-container">
-                    <label for="id">Project ID:</label>
-                    <input type="text" id="id" name="id" value="<?php echo $id; ?>">
-                    <button type="submit" >Charger les versions</button>
+        <div class="container bg-white mt-4 rounded shadow pb-3">
+            <h1 class="text-center mb-4">Changelog Generator</h1>
+            <form action="" method="post" class="mb-4">
+                <div class="card p-3 shadow-sm">
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Project ID:</label>
+                        <input type="text" id="id" name="id" class="form-control" value="<?php echo $id; ?>">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Charger les versions</button>
                 </div>
             </form>
-            <br>
-            <div class="withe_box">
-                <div>
-                    <label>Anciennes versions :</label>
-                    <select class="dropdown" id="version-dropdown1">
+            
+            <div class="card p-3 shadow-sm">
+                <div class="mb-3">
+                    <label for="version-dropdown1" class="form-label">Anciennes versions :</label>
+                    <select id="version-dropdown1" class="form-select">
                         <option value="" disabled selected>Anciennes versions</option>
                     </select>
                 </div>
-                <br>
-                <div>
-                    <label>Nouvelles versions :</label>
-                    <select class="dropdown" id="version-dropdown2">
+                <div class="mb-3">
+                    <label for="version-dropdown2" class="form-label">Nouvelles versions :</label>
+                    <select id="version-dropdown2" class="form-select">
                         <option value="" disabled selected>Nouvelles versions</option>
                     </select>
                 </div>
-                <button type="button" onclick="getVersion()">Generate Changelog</button>
+                <button type="button" class="btn btn-primary" onclick="getVersion()">Generate Changelog</button>
             </div>
-
-        
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/script.js"></script>
     </body>
+
     <script>
         const data = <?php echo $versions_list_json; ?>;
 
